@@ -11,9 +11,9 @@ const SkillToggle = () => {
             
             <div className="container-m-auto">{/* button goes here*/}
                 <div className="m-auto w-max border-2 border-[#d33a3a] py-3
-                px-5 rounded-full relative ease-in-out duration-200">
+                px-10 rounded-full relative ease-in-out duration-200">
 
-                    <div style={{width: item === 'Computer Science' ? '40%' : '65%', 
+                    <div style={{width: item === 'Computer Science' ? '60%' : '65%', 
                     left: item === 'Computer Science' ? '0' : '36%'
                 }}
                 className="absolute top-0 bg-[#d33a3a] rounded-full h-full ease-in-out
