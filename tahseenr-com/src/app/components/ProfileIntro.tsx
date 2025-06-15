@@ -1,7 +1,7 @@
 "use client";
 
-import SkillToggle from "./SkillToggle";
 import Image from "next/image";
+import SkillToggle from "./SkillToggle";
 import ProfileImage from '../../../public/TahseenRayhan.png';
 
 const ProfileIntro = () => {
@@ -10,16 +10,42 @@ const ProfileIntro = () => {
         <section id="intro">
 
             <div className="flex flex-row gap-4">
-                <div>
+                <div className="flex flex-col items-center gap-4">
+                    
                     <Image
                         src={ProfileImage}
                         alt="Profile Picture"
                         className="rounded-full size-40 border-4 border-white"/>
 
-                    <div></div>    
-                    <p>Socials</p>
-                    {/* Profile Picture
-                    Linkedin, Github, X */}
+                    <div className="flex flex-row gap-5">
+                        
+                        <a href="https://www.linkedin.com/in/tahseenr/" target="_blank" rel="noopener noreferrer">
+                            <Image
+                            src="/linkedin.svg"
+                            alt="LinkedIn"
+                            
+                            width={24}
+                            height={24}
+                            />
+                        </a>
+                        <a href="https://github.com/rayhant2" target="_blank" rel="noopener noreferrer">
+                            <Image
+                                src="/github.svg"
+                                alt="Github"
+                                width={24}
+                                height={24}
+                                />
+                        </a>
+                        <a href="https://x.com/tahseenr0" target="_blank" rel="noopener noreferrer">
+                            <Image
+                                src="/xlogo.svg"
+                                alt="X"
+                                width={24}
+                                height={24}
+                                />
+                        </a>
+                    </div>    
+                    
                 </div>
 
                 <div>
