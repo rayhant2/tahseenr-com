@@ -1,6 +1,8 @@
 "use client";
 
 import SkillToggle from "./SkillToggle";
+import Image from "next/image";
+import ProfileImage from '../../../public/TahseenRayhan.png';
 
 const ProfileIntro = () => {
 
@@ -9,7 +11,12 @@ const ProfileIntro = () => {
 
             <div className="flex flex-row gap-4">
                 <div>
-                    <p>Profile Picture</p>
+                    <Image
+                        src={ProfileImage}
+                        alt="Profile Picture"
+                        className="rounded-full size-40 border-4 border-white"/>
+
+                    <div></div>    
                     <p>Socials</p>
                     {/* Profile Picture
                     Linkedin, Github, X */}
