@@ -9,7 +9,7 @@ const SkillToggle = () => {
             id = 'Computer Science'>
             
             <div className="m-auto w-auto">{/* button goes here*/}
-                <div className="m-2 py-3 bg-[#0c171f] rounded-full relative overflow-hidden">
+                <div className="py-2 mt-2 bg-[#0c171f] rounded-full relative overflow-hidden">
 
                     {/* Moving Toggle */}
                     <div className="absolute top-0 bg-[#535e67] rounded-full h-full w-1/2 ease-in-out transition-all duration-300"

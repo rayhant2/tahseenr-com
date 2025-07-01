@@ -9,13 +9,13 @@ const ProfileIntro = () => {
     return (
         <section id="intro">
 
-            <div className="flex flex-row gap-4">
+            <div className="flex flex-row gap-8 items-center">
                 <div className="flex flex-col items-center gap-4">
                     
                     <Image
                         src={ProfileImage}
                         alt="Profile Picture"
-                        className="rounded-full size-40 border-4 border-white"/>
+                        className="rounded-full size-35 border-4 border-white"/>
 
                     <div className="flex flex-row gap-5">
                         
@@ -48,21 +48,23 @@ const ProfileIntro = () => {
                     
                 </div>
 
-                <div className="font-poppins">
-                    <div className="flex flex-row gap-2 align-items items-end">
-                        <p>Hi, I'm</p>
-                        <p className="font-bold text-3xl">Tahseen Rayhan 👋</p>
+                <div className="font-poppins flex flex-col content-center">
+                    <div className="mb-5">
+                        <div className="flex flex-row gap-2 align-items items-end">
+                            <p>Hi, I'm</p>
+                            <p className="font-bold text-3xl">Tahseen Rayhan 👋</p>
+                        </div>
+                        <div className="flex flex-row gap-1 mt-1 text-[14px]">
+                            <p className="text-[#f0bb16] duration-400">CS</p>
+                            <p>@ UWaterloo, </p>
+                            <p className="text-[#bb88f7] duration-400">BBA</p>
+                            <p>@ Wilfrid Laurier </p>
+                            <p className="pl-1 text-slate-400">(Dual Degree)</p>
+                        </div>
                     </div>
 
-                    <div className="flex flex-row gap-1">
-                        <p className="hover:text-[#f0bb16] duration-400">CS</p>
-                        <p>@ UWaterloo, </p>
-                        <p className="hover:text-[#bb88f7] duration-400">BBA</p>
-                        <p>@ Wilfrid Laurier </p>
-                        <p className="pl-1">(Dual Degree)</p>
-                    </div>
 
-                    <div>
+                    <div className="flex flex-col justify-end">
                         <p>Explore my journey in ...</p>
                         <SkillToggle/>
                     </div>
