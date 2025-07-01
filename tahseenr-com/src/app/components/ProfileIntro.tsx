@@ -48,7 +48,7 @@ const ProfileIntro = () => {
                     
                 </div>
 
-                <div>
+                <div className="font-poppins">
                     <div className="flex flex-row gap-2">
                         <p>Hi, I'm</p>
                         <p>Tahseen Rayhan 👋</p>
