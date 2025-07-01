@@ -6,32 +6,36 @@ const SkillToggle = () => {
     const [item, setItem] = useState('Computer Science')
     return (
         <section
-            id = 'Computer Science'
-            className="bg-white">
+            id = 'Computer Science'>
             
-            <div className="container-m-auto">{/* button goes here*/}
-                <div className="m-auto w-max border-2 border-[#d33a3a] py-3
-                px-10 rounded-full relative ease-in-out duration-200">
+            <div className="m-auto w-auto">{/* button goes here*/}
+                <div className="m-2 py-3 bg-[#0c171f] rounded-full relative overflow-hidden">
 
-                    <div style={{width: item === 'Computer Science' ? '60%' : '65%', 
-                    left: item === 'Computer Science' ? '0' : '36%'
-                }}
-                className="absolute top-0 bg-[#d33a3a] rounded-full h-full ease-in-out
-                duration-200"
-                ></div>
-                    {/* {button items} */}
-                    <div className="flex gap-7 md:text-lg font-bold-z-[1]
-                    relative cursor-pointer">
+                    {/* Moving Toggle */}
+                    <div className="absolute top-0 bg-[#535e67] rounded-full h-full w-1/2 ease-in-out transition-all duration-300"
+                    style={{left: item === 'Computer Science' ? '0%' : '50%'
+                    }}
+                    ></div>
+                    
+                    {/* Button Items */}
+                    <div className="relative z-[1] flex text-center text-white font-medium">
 
-                        <p onClick={() => setItem('Computer Science')}
-                            className={`${item === 'Computer Science' && 'text-white opacity-100'}`}>
+                        <div onClick={() => setItem('Computer Science')}
+                        className="w-1/2 cursor-pointer px-2 py-1 flex justify-center items-center">
+
+                            <span className={`transition-opacity duration-200 
+                            ${item === "Computer Science" ? "opacity-100" : "opacity-70"}`}>
                                 Computer Science
-                            </p>
+                            </span>
+                        </div>
 
-                        <p onClick={() => setItem('Business')}
-                            className={`${item === 'Business' && 'text-white opacity-100'}`}>
-                                Business
-                            </p>
+                        <div onClick={() => setItem('Business')}
+                            className="w-1/2 cursor-pointer px-2 py-1 flex justify-center items-center">
+                            <span className={`transition-opacity duration-200 
+                            ${item === "Business" ? "opacity-100" : "opacity-70"}`}>
+                                Business Admin.
+                            </span>    
+                        </div>
                     </div>
 
                 
