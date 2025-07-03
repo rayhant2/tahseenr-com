@@ -1,8 +1,9 @@
 "use client";
 
+import React from "react";
 import { useState } from "react";
 
-const SkillToggle = () => {
+const SkillToggle = (): React.ReactElement => {
     const [item, setItem] = useState('Computer Science')
     return (
         <section

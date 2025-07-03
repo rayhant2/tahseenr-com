@@ -4,7 +4,7 @@ import Image from "next/image";
 import SkillToggle from "./SkillToggle";
 import ProfileImage from '../../../public/TahseenRayhan.png';
 
-const ProfileIntro = () => {
+const ProfileIntro = (): React.ReactElement => {
 
     return (
         <section id="intro">
