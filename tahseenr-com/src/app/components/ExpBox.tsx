@@ -4,6 +4,7 @@ import React from "react";
 import Image, { StaticImageData } from "next/image";
 import { start } from "repl";
 
+
 interface ExperienceProps {
     position: string; 
     company: string;
@@ -15,7 +16,7 @@ interface ExperienceProps {
 
 const ExperienceBox: React.FC<ExperienceProps> = ({position, company, start_date, end_date, logo_img, description}) => {
     return (
-        <div className="hover:shadow-xl/30 shadow-black-600 transition-shadow duration-200 flex flex-row bg-[#283640] align-items items-center font-poppins m-4 mt-7 rounded-xl h-auto w-3/4 p-6 px-9 gap-8">
+        <div className="hover:shadow-xl/20 shadow-black-500 transition-shadow duration-300 flex flex-row bg-[#22303b] align-items items-center font-poppins m-4 mt-7 rounded-xl h-auto w-3/4 p-6 px-9 gap-8">
             
             <Image
                 src={logo_img}
