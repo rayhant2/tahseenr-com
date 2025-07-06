@@ -6,6 +6,7 @@ import Image from "next/image";
 import ProfileIntro from "./components/ProfileIntro";
 import Experiences from "./components/Experience";
 import ProfileImage from '../../public/TahseenRayhan.png';
+import ProjectsBox from "./components/ProjectsBox";
 
 export const ThemeContext = React.createContext()
 
@@ -135,6 +136,13 @@ export default function Home() {
 
         
         {/* <ProfileIntro/> <--- DO NOT UNCOMMENT */}
+        <ProjectsBox
+          project_name="Boids Project"
+          description="Simulation of crowding and emergent behavior within a dynamic group of unrelated objects, done with PhD students at the University of Toronto."
+          project_img={ProfileImage}
+          gh_link="https://github.com/rayhant2/Boids-simulation"
+          tech_tags={["Python", "TensorFlow", "NumPy", "SciPy", "SQL", "React", "Typescript"]}
+        />
         <Experiences/>
 
       </ThemeContext.Provider>
