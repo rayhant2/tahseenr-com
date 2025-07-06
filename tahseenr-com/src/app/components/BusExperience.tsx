@@ -18,7 +18,7 @@ const BusExperience = (): React.ReactElement => {
 
                 <div className="flex flex-col">
                     <ExperienceBox 
-                        position="Data Analyst & Collection"
+                        position="Data Analyst"
                         company="Junior Achievement Canada"
                         start_date="Jun 2025"
                         end_date="Present"
