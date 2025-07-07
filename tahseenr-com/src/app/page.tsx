@@ -10,6 +10,7 @@ import Experiences from "./components/Experience";
 import ProfileImage from '../../public/TahseenRayhan.png';
 import ProjectsBox from "./components/ProjectsBox";
 import RenderProjects from "./components/Projects";
+import RenderExpProj from "./components/RenderExpProj";
 
 export const ThemeContext = React.createContext()
 export const ExProjContext = React.createContext()
@@ -182,8 +183,7 @@ export default function Home() {
             </div>
 
 
-        <RenderProjects/>
-        <Experiences/>
+        <RenderExpProj/>
 
         </ExProjContext.Provider>
       </ThemeContext.Provider>
