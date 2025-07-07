@@ -30,18 +30,18 @@ export default function Home() {
   }
 
   return (
-    <div className="p-10 w-screen h-screen content-center">
+    <div className="p-10 w-screen min-h-screen content-center">
       <ThemeContext.Provider value={major}>
         
-        <section id="intro">
+        <section id="intro" className="flex items-center justify-center">
 
-            <div className="flex flex-row gap-8 items-center">
-                <div className="flex flex-col items-center gap-4">
+            <div className="flex md:flex-row flex-col w-full h-full align-items items-center md:gap-8 gap-6">
+                <div className="flex flex-col items-center gap-6 p-4">
                     
                     <Image
                         src={ProfileImage}
                         alt="Profile Picture"
-                        className="rounded-full size-35 border-4 border-white"/>
+                        className="rounded-full size-50 aspect-square object-cover border-4 border-white"/>
 
                     <div className="flex flex-row gap-5">
                         
@@ -50,8 +50,8 @@ export default function Home() {
                             src={Resume}
                             alt="Resume"
                             
-                            width={26}
-                            height={26}
+                            width={30}
+                            height={30}
                             />
                         </a>
 
@@ -60,42 +60,46 @@ export default function Home() {
                             src="/linkedin.svg"
                             alt="LinkedIn"
                             
-                            width={24}
-                            height={24}
+                            width={30}
+                            height={30}
                             />
                         </a>
                         <a href="https://github.com/rayhant2" target="_blank" rel="noopener noreferrer">
                             <Image
                                 src="/github.svg"
                                 alt="Github"
-                                width={24}
-                                height={24}
+                                width={30}
+                                height={30}
                                 />
                         </a>
                         <a href="https://x.com/tahseenr0" target="_blank" rel="noopener noreferrer">
                             <Image
                                 src="/xlogo.svg"
                                 alt="X"
-                                width={24}
-                                height={24}
+                                width={30}
+                                height={30}
                                 />
                         </a>
                     </div>    
                     
                 </div>
 
-                <div className="font-poppins flex flex-col content-center">
-                    <div className="mb-5">
-                        <div className="flex flex-row gap-2 align-items items-end">
-                            <p>Hi, I'm</p>
-                            <p className="font-bold text-3xl">Tahseen Rayhan 👋</p>
+                {/* DONE UP TO HERE */}
+
+                <div className="font-poppins flex flex-col justify-center h-full w-full md:w-2/3 mb-5">
+                    <div className="mb-5 w-full">
+                        <div className="flex flex-row gap-3 align-items items-end">
+                            <p className="md:text-xl">Hi, I'm</p>
+                            <p className="font-bold md:text-4xl text-2xl">Tahseen Rayhan 👋</p>
                         </div>
-                        <div className="flex flex-row gap-1 mt-1 text-[14px]">
-                            <p className="text-[#f0bb16] duration-400">CS</p>
-                            <p>@ UWaterloo, </p>
-                            <p className="text-[#bb88f7] duration-400">BBA</p>
-                            <p>@ Wilfrid Laurier </p>
-                            <p className="pl-1 text-slate-400">(Dual Degree)</p>
+                        <div className="flex md:flex-row flex-col gap-1 mt-1 md:text-[17px] font-light">
+                            <div className="flex flex-row gap-1">
+                              <p className="text-[#f0bb16] duration-400">CS</p>
+                              <p>@ UWaterloo, </p>
+                              <p className="text-[#bb88f7] duration-400">BBA</p>
+                              <p>@ Wilfrid Laurier </p>
+                            </div>
+                            <p className="pl-1 text-slate-400 hidden md:block">(Dual Degree)</p>
                         </div>
                     </div>
 
@@ -104,7 +108,7 @@ export default function Home() {
                         <p>Explore my journey in ...</p>
                         {/* SKILL TOGGLE */}
                           <section
-            id = 'Computer Science'>
+                        id = 'Computer Science'>
             
             <div className="m-auto w-auto">{/* button goes here*/}
                 <div className="py-2 mt-2 bg-[#0c171f] rounded-full relative overflow-hidden">
@@ -198,7 +202,7 @@ export default function Home() {
 
         <RenderExpProj/>
 
-        <Image src={SignImage} alt="BOOM!"/>
+        <Image src={SignImage} alt="BOOM!" className="w-40 h-20"/>
 
         </ExProjContext.Provider>
       </ThemeContext.Provider>
