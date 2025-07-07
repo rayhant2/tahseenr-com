@@ -2,21 +2,29 @@
 
 import React, { useState } from "react";
 
+import CompSciProj from "./components/CSProjects";
+import BusProj from "./components/BusProjects";
 import Image from "next/image";
 import ProfileIntro from "./components/ProfileIntro";
 import Experiences from "./components/Experience";
 import ProfileImage from '../../public/TahseenRayhan.png';
 import ProjectsBox from "./components/ProjectsBox";
+import RenderProjects from "./components/Projects";
 
 export const ThemeContext = React.createContext()
+export const ExProjContext = React.createContext()
 
 export default function Home() {
   const [major, setMajor] = useState('Computer Science')
-  // const [item, setItem] = useState('Computer Science') <-- THIS IS FROM SKILL TOGGLE
+  const [exProj, setExProj] = useState('Experience')
 
   // DO WE EVEN NEED THIS FUNCTION IF ALL WE ARE DOING IS CHANGING THE STATE?? REDUNDANT!!
   function toggleTheme(selectedMajor: 'Computer Science' | 'Business') {
     setMajor(prevMajor => prevMajor !== selectedMajor ? selectedMajor : prevMajor)
+  }
+
+  function toggleExProj(selected: 'Experience' | 'Projects') {
+    setExProj(prevExProj => prevExProj !== selected ? selected : prevExProj)
   }
 
   return (
@@ -133,18 +141,51 @@ export default function Home() {
             
         </section>
 
+        <ExProjContext.Provider value={exProj}>
 
-        
-        {/* <ProfileIntro/> <--- DO NOT UNCOMMENT */}
-        <ProjectsBox
-          project_name="Boids Project"
-          description="Simulation of crowding and emergent behavior within a dynamic group of unrelated objects, done with PhD students at the University of Toronto."
-          project_img={ProfileImage}
-          gh_link="https://github.com/rayhant2/Boids-simulation"
-          tech_tags={["Python", "TensorFlow", "NumPy", "SciPy", "SQL", "React", "Typescript"]}
-        />
+          <div className="m-auto w-auto">{/* button goes here*/}
+                <div className="py-2 mt-2 bg-[#0c171f] rounded-full relative overflow-hidden">
+
+                    {/* Moving Toggle */}
+                    <div className="absolute top-0 bg-[#535e67] rounded-full h-full w-1/2 ease-in-out transition-all duration-300"
+                    style={{left: exProj === 'Experience' ? '0%' : '50%'
+                    }}
+                    ></div>
+                    
+                    {/* Button Items */}
+                    <div className="relative z-[1] flex text-center text-white font-medium">
+
+                        <div onClick={() => toggleExProj("Experience")}
+                        className="w-1/2 cursor-pointer px-2 py-1 flex justify-center items-center">
+
+                            <span className={`transition-opacity duration-200 
+                            ${exProj === "Experience" ? "opacity-100" : "opacity-70"}`}>
+                                Experience
+                            </span>
+                        </div>
+
+                        <div onClick={() => toggleExProj("Projects")}
+                            className="w-1/2 cursor-pointer px-2 py-1 flex justify-center items-center">
+                            <span className={`transition-opacity duration-200 
+                            ${exProj === "Projects" ? "opacity-100" : "opacity-70"}`}>
+                                Projects
+                            </span>    
+                        </div>
+                    </div>
+
+                
+                
+                </div>
+
+                
+                
+            </div>
+
+
+        <RenderProjects/>
         <Experiences/>
 
+        </ExProjContext.Provider>
       </ThemeContext.Provider>
     </div>
     
