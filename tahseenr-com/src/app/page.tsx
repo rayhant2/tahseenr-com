@@ -1,13 +1,14 @@
 "use client"
 
 import React, { useState } from "react";
-
+import Resume from "../../public/resume.svg";
 import CompSciProj from "./components/CSProjects";
 import BusProj from "./components/BusProjects";
 import Image from "next/image";
 import ProfileIntro from "./components/ProfileIntro";
 import Experiences from "./components/Experience";
 import ProfileImage from '../../public/TahseenRayhan.png';
+import SignImage from '../../public/fakesignature.png';
 import ProjectsBox from "./components/ProjectsBox";
 import RenderProjects from "./components/Projects";
 import RenderExpProj from "./components/RenderExpProj";
@@ -44,6 +45,16 @@ export default function Home() {
 
                     <div className="flex flex-row gap-5">
                         
+                        <a href="/TahseenRayhanResume.pdf" target="_blank" rel="noopener noreferrer">
+                            <Image
+                            src={Resume}
+                            alt="Resume"
+                            
+                            width={26}
+                            height={26}
+                            />
+                        </a>
+
                         <a href="https://www.linkedin.com/in/tahseenr/" target="_blank" rel="noopener noreferrer">
                             <Image
                             src="/linkedin.svg"
@@ -142,6 +153,8 @@ export default function Home() {
             
         </section>
 
+        <p className="font-raleway font-light">I’m a software engineer with a sharp eye for business needs. I build tools to help teams move faster, solve real problems, cut friction, and help organizations grow what they're working on. I'm all about turning complex problems into clean, useable products!</p>
+
         <ExProjContext.Provider value={exProj}>
 
           <div className="m-auto w-auto">{/* button goes here*/}
@@ -184,6 +197,8 @@ export default function Home() {
 
 
         <RenderExpProj/>
+
+        <Image src={SignImage} alt="BOOM!"/>
 
         </ExProjContext.Provider>
       </ThemeContext.Provider>
