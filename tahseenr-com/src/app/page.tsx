@@ -43,7 +43,7 @@ export default function Home() {
                         alt="Profile Picture"
                         className="rounded-full size-50 aspect-square object-cover border-4 border-white"/>
 
-                    <div className="flex flex-row gap-5">
+                    <div className="flex flex-row gap-7">
                         
                         <a href="/TahseenRayhanResume.pdf" target="_blank" rel="noopener noreferrer">
                             <Image
@@ -111,7 +111,7 @@ export default function Home() {
                         id = 'Computer Science'>
             
             <div className="m-auto w-auto">{/* button goes here*/}
-                <div className="py-2 mt-2 bg-[#0c171f] rounded-full relative overflow-hidden">
+                <div className="py-2 mt-3 bg-[#0c171f] rounded-full relative overflow-hidden">
 
                     {/* Moving Toggle */}
                     <div className="absolute top-0 bg-[#535e67] rounded-full h-full w-1/2 ease-in-out transition-all duration-300"
@@ -157,24 +157,27 @@ export default function Home() {
             
         </section>
 
-        <p className="font-raleway font-light">I’m a software engineer with a sharp eye for business needs. I build tools to help teams move faster, solve real problems, cut friction, and help organizations grow what they're working on. I'm all about turning complex problems into clean, useable products!</p>
+
+        <p className="font-raleway font-light mt-10 mb-5 bg-[#0c171f] p-8 rounded-2xl">I’m a full-stack software developer expanding into ML. I've grown a sharp eye for business needs, building tools to solve real problems, increase efficiency, and turn complex problems into clean, useable products.</p>
+
+        <div className="bg-white/80 h-[1px] mx-15 my-15"></div>
 
         <ExProjContext.Provider value={exProj}>
 
-          <div className="m-auto w-auto">{/* button goes here*/}
-                <div className="py-2 mt-2 bg-[#0c171f] rounded-full relative overflow-hidden">
+          <div className="mt-10 mb-3 md:mx-15 mx-4">{/* button goes here*/}
+                <div className="h-10 bg-[#0c171f] rounded-xl relative overflow-hidden">
 
                     {/* Moving Toggle */}
-                    <div className="absolute top-0 bg-[#535e67] rounded-full h-full w-1/2 ease-in-out transition-all duration-300"
+                    <div className="absolute top-0 bg-[#2a323b] rounded-xl h-full w-1/2 ease-in-out transition-all duration-300"
                     style={{left: exProj === 'Experience' ? '0%' : '50%'
                     }}
                     ></div>
                     
                     {/* Button Items */}
-                    <div className="relative z-[1] flex text-center text-white font-medium">
+                    <div className="relative z-[1] flex text-center text-white items-center h-full font-medium">
 
                         <div onClick={() => toggleExProj("Experience")}
-                        className="w-1/2 cursor-pointer px-2 py-1 flex justify-center items-center">
+                        className="w-1/2 cursor-pointer px-2 h-full flex justify-center items-center">
 
                             <span className={`transition-opacity duration-200 
                             ${exProj === "Experience" ? "opacity-100" : "opacity-70"}`}>
@@ -183,7 +186,7 @@ export default function Home() {
                         </div>
 
                         <div onClick={() => toggleExProj("Projects")}
-                            className="w-1/2 cursor-pointer px-2 py-1 flex justify-center items-center">
+                            className="w-1/2 cursor-pointer px-2 h-full flex justify-center items-center">
                             <span className={`transition-opacity duration-200 
                             ${exProj === "Projects" ? "opacity-100" : "opacity-70"}`}>
                                 Projects
@@ -199,8 +202,10 @@ export default function Home() {
                 
             </div>
 
-
-        <RenderExpProj/>
+        {/* DONE UP TO HERE!!! */}
+        <div className="md:mx-15 mx-4 bg-[#0b131a]/40 rounded-xl pr-10">
+          <RenderExpProj/>
+        </div>
 
         <Image src={SignImage} alt="BOOM!" className="w-40 h-20"/>
 

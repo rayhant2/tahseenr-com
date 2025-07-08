@@ -8,7 +8,7 @@ import BusExperience from './BusExperience'
 export default function Experiences() {
     const major = useContext(ThemeContext)
     return (
-        <div>
+        <div className='w-full'>
             {
                 major === 'Computer Science' ? <CompSciExperience/> : <BusExperience/>
             }

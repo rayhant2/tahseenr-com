@@ -14,7 +14,7 @@ const BusExperience = (): React.ReactElement => {
         <div className="w-full">
             <div className="relative">
 
-                <div className="absolute left-[3.0rem] top-10 bottom-10 w-[4px] bg-white/40 rounded-full -z-10" />
+                <div className="absolute left-[4.5rem] top-40 md:bottom-30 bottom-45 w-[2px] bg-white/40 rounded-full -z-10" />
 
                 <div className="flex flex-col">
                     <ExperienceBox 
