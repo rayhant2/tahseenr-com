@@ -12,7 +12,7 @@ const CompSciExperience = (): React.ReactElement => {
     return (
             <div className="w-full relative">
 
-                <div className="absolute left-[4.5rem] top-40 md:bottom-30 bottom-40 w-[2px] bg-white/30 rounded-full -z-10" />
+                <div className="absolute left-[4.5rem] top-30 md:bottom-30 bottom-30 w-[2px] bg-white/30 rounded-full -z-10" />
 
                 <div className="flex flex-col">
                     <ExperienceBox 

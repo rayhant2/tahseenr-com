@@ -30,7 +30,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen p-15 content-center">
+    <div className="min-h-screen p-8 content-center">
       <ThemeContext.Provider value={major}>
         
         <section id="intro" className="flex items-center justify-center">
@@ -156,9 +156,11 @@ export default function Home() {
         </section>
 
 
-        <p className="font-raleway font-light mt-10 mb-5 bg-[#0c171f] p-8 rounded-2xl">I’m a full-stack software developer expanding into ML. I've grown a sharp eye for business needs, building tools to solve real problems, increase efficiency, and turn complex problems into clean, useable products.</p>
+        <p className="font-raleway font-light mt-5 bg-[#0c171f] p-8 rounded-2xl">I'm a full-stack software developer expanding into ML. I've grown a sharp eye for business needs, building tools to solve real problems, increase efficiency, and turn complex problems into clean, useable products.</p>
 
-        <div className="bg-white/80 h-[1px] mx-90 my-15"></div>
+        <div className="h-[1px] w-full flex justify-center my-10">
+            <div className="bg-white h-[1px] w-1/4"/>
+        </div>
 
         <ExProjContext.Provider value={exProj}>
 

@@ -12,11 +12,13 @@ const RenderExpProj = () => {
     const degreeSide = useContext(ThemeContext)
     const contentType = useContext(ExProjContext)
 
+    {/* Working on Project rendering */}
+
     return (
         <div>
             {
                 degreeSide === "Computer Science"
-                ? (contentType === "Experience" ? <CompSciExperience/> : <CompSciProj/>)
+                ? (contentType === "Experience" ? <CompSciExperience/> : <CompSciProj/>) 
                 : (contentType === "Experience" ? <BusExperience/> : <BusProj/>)
             }
         </div>
