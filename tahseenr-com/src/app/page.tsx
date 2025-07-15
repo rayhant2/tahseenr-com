@@ -13,8 +13,8 @@ import ProjectsBox from "./components/ProjectsBox";
 import RenderProjects from "./components/Projects";
 import RenderExpProj from "./components/RenderExpProj";
 
-export const ThemeContext = React.createContext()
-export const ExProjContext = React.createContext()
+export const ThemeContext = React.createContext('Computer Science')
+export const ExProjContext = React.createContext('Experience')
 
 export default function Home() {
   const [major, setMajor] = useState('Computer Science')
@@ -30,7 +30,7 @@ export default function Home() {
   }
 
   return (
-    <div className="p-10 w-screen min-h-screen content-center">
+    <div className="min-h-screen p-15 content-center">
       <ThemeContext.Provider value={major}>
         
         <section id="intro" className="flex items-center justify-center">
@@ -84,19 +84,17 @@ export default function Home() {
                     
                 </div>
 
-                {/* DONE UP TO HERE */}
-
                 <div className="font-poppins flex flex-col justify-center h-full w-full md:w-2/3 mb-5">
-                    <div className="mb-5 w-full">
-                        <div className="flex flex-row gap-3 align-items items-end">
-                            <p className="md:text-xl">Hi, I'm</p>
-                            <p className="font-bold md:text-4xl text-2xl">Tahseen Rayhan 👋</p>
+                    <div className="mb-5 w-full flex flex-col">
+                        <div className="flex flex-row gap-2 align-items items-end">
+                            <p className="md:text-[18px]">Hi, I'm</p>
+                            <p className="font-bold md:text-[33px] text-2xl">Tahseen Rayhan 👋</p>
                         </div>
-                        <div className="flex md:flex-row flex-col gap-1 mt-1 md:text-[17px] font-light">
+                        <div className="flex md:flex-row flex-col gap-1 mt-1 md:text-[14px] font-light">
                             <div className="flex flex-row gap-1">
-                              <p className="text-[#f0bb16] duration-400">CS</p>
+                              <p className="text-[#f0bb16]">CS</p>
                               <p>@ UWaterloo, </p>
-                              <p className="text-[#bb88f7] duration-400">BBA</p>
+                              <p className="text-[#bb88f7]">BBA</p>
                               <p>@ Wilfrid Laurier </p>
                             </div>
                             <p className="pl-1 text-slate-400 hidden md:block">(Dual Degree)</p>
@@ -160,11 +158,11 @@ export default function Home() {
 
         <p className="font-raleway font-light mt-10 mb-5 bg-[#0c171f] p-8 rounded-2xl">I’m a full-stack software developer expanding into ML. I've grown a sharp eye for business needs, building tools to solve real problems, increase efficiency, and turn complex problems into clean, useable products.</p>
 
-        <div className="bg-white/80 h-[1px] mx-15 my-15"></div>
+        <div className="bg-white/80 h-[1px] mx-90 my-15"></div>
 
         <ExProjContext.Provider value={exProj}>
 
-          <div className="mt-10 mb-3 md:mx-15 mx-4">{/* button goes here*/}
+          <div className="mt-10 mb-3 mx-1">{/* button goes here*/}
                 <div className="h-10 bg-[#0c171f] rounded-xl relative overflow-hidden">
 
                     {/* Moving Toggle */}
@@ -203,7 +201,7 @@ export default function Home() {
             </div>
 
         {/* DONE UP TO HERE!!! */}
-        <div className="md:mx-15 mx-4 bg-[#0b131a]/40 rounded-xl pr-10">
+        <div className="mx-1 bg-[#0b131a]/40 rounded-xl pr-10">
           <RenderExpProj/>
         </div>
 

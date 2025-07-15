@@ -10,8 +10,7 @@ import BrandEq from '../../../public/brandeq_logo.jpg';
 
 const CompSciExperience = (): React.ReactElement => {
     return (
-        <div className="w-full">
-            <div className="relative">
+            <div className="w-full relative">
 
                 <div className="absolute left-[4.5rem] top-40 md:bottom-30 bottom-40 w-[2px] bg-white/30 rounded-full -z-10" />
 
@@ -58,7 +57,6 @@ const CompSciExperience = (): React.ReactElement => {
                     />
                 </div>
             </div>
-        </div>
     );
 }
 
