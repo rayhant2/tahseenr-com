@@ -12,6 +12,7 @@ import SignImage from '../../public/fakesignature.png';
 import ProjectsBox from "./components/ProjectsBox";
 import RenderProjects from "./components/Projects";
 import RenderExpProj from "./components/RenderExpProj";
+import Coursework from "./components/Coursework";
 
 export const ThemeContext = React.createContext('Computer Science')
 export const ExProjContext = React.createContext('Experience')
@@ -203,8 +204,16 @@ export default function Home() {
             </div>
 
         {/* DONE UP TO HERE!!! */}
-        <div className="mx-1 bg-[#0b131a]/40 rounded-xl pr-10">
+        <div className="mx-1 mb-5 bg-[#0b131a]/40 rounded-xl pr-10">
           <RenderExpProj/>
+        </div>
+
+        <div className="flex w-full items-center justify-center my-10">
+            <div className="bg-white h-[1px] w-1/4"/>
+        </div>
+
+        <div className="bg-[#0c171f] rounded-xl p-3 mx-1">
+            <Coursework/>
         </div>
 
         <Image src={SignImage} alt="BOOM!" className="w-40 h-20"/>
