@@ -5,7 +5,7 @@ import ProfileImage from '../../../public/TahseenRayhan.png';
 
 const CompSciProj = (): React.ReactElement => {
     return (
-        <div>
+        <div className="w-full relative p-1">
             <ProjectsBox
                 project_name="Boids Project"
                 description="Simulation of crowding and emergent behavior within a dynamic group of unrelated objects, done with PhD students at the University of Toronto."

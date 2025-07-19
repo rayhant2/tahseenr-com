@@ -12,12 +12,11 @@ interface ProjectBoxProps {
     tech_tags: string[],
 }
 
-
 const ReturnTags = (tech_tags: string[]) => {
     return (
-        <div className="flex flex-row flex-wrap gap-2">
+        <div className="flex flex-row flex-wrap gap-2 sm:gap-3">
             {tech_tags.map((tag, index) => (
-                <div key={index} className="bg-[#54787e] p-2 rounded-xl text-white text-xs">
+                <div key={index} className="bg-[#54787e] p-2 px-3 rounded-xl text-white text-[11px] sm:text-sm">
                     {tag}
                 </div>
             ))}
@@ -32,20 +31,21 @@ const ProjectsBox: React.FC<ProjectBoxProps> = ({project_name, description, proj
     
     
     return (
-        <div className="hover:shadow-xl/20 shadow-black-500 transition-shadow duration-300 flex flex-row bg-[#22303b] align-items items-center font-poppins m-4 mt-7 rounded-xl h-auto w-3/4 p-6 px-9 gap-8">
-            <a href={gh_link} target="_blank" rel="noopener noreferrer">
-                <div className="flex flex-row gap-9">
-                    <div>
+        <div className="hover:shadow-xl/20 shadow-black-500 transition-shadow duration-300 flex flex-row bg-[#22303b] align-items items-center font-poppins m-4 rounded-xl h-full w-full p-6 px-7">
+            <a href={gh_link} target="_blank" rel="noopener noreferrer" className="flex flex-col sm:flex-row justify-between items-center w-full h-full gap-6">
+                    <div className="flex flex-col justify-center h-full gap-2">
                         <p className="font-bold text-[20px] opacity-90 mb-1">{project_name}</p>
                         <p className="font-raleway text-sm mb-3">{description}</p>
-                        {ReturnTags(tech_tags)}
+                        <div className="">
+                            {ReturnTags(tech_tags)}
+                        </div>
                     </div>
                     
                     <Image
                         src={project_img}
                         alt="Company Logo"
                         className="rounded-xl size-50"/>
-                </div>
+
             </a>
         </div>
     );
