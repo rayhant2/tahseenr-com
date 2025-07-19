@@ -8,14 +8,29 @@ import Image from "next/image";
 import ProfileIntro from "./components/ProfileIntro";
 import Experiences from "./components/Experience";
 import ProfileImage from '../../public/TahseenRayhan.png';
-import SignImage from '../../public/fakesignature.png';
 import ProjectsBox from "./components/ProjectsBox";
 import RenderProjects from "./components/Projects";
 import RenderExpProj from "./components/RenderExpProj";
 import Coursework from "./components/Coursework";
+import Footer from "./components/Footer";
+import 'animate.css'
+import { motion } from "motion/react"
 
 export const ThemeContext = React.createContext('Computer Science')
 export const ExProjContext = React.createContext('Experience')
+
+const fadeInVariant = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut" as const  // <-- TypeScript fix: enforce as valid easing string
+    }
+  }
+};
+
 
 export default function Home() {
   const [major, setMajor] = useState('Computer Science')
@@ -31,7 +46,8 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen p-8 content-center">
+    <div>
+    <div className="min-h-screen p-8 sm:mt-10 content-center">
       <ThemeContext.Provider value={major}>
         
         <section id="intro" className="flex items-center justify-center">
@@ -87,11 +103,11 @@ export default function Home() {
 
                 <div className="font-poppins flex flex-col justify-center h-full w-full md:w-2/3 mb-5">
                     <div className="mb-5 w-full flex flex-col">
-                        <div className="flex flex-row gap-2 align-items items-end">
+                        <div className="animate__animated animate__fadeInDown flex flex-row gap-2 align-items items-end">
                             <p className="md:text-[18px]">Hi, I'm</p>
                             <p className="font-bold md:text-[33px] text-2xl">Tahseen Rayhan 👋</p>
                         </div>
-                        <div className="flex md:flex-row flex-col gap-1 mt-1 md:text-[14px] font-light">
+                        <div className="animate__animated animate__fadeInDown flex md:flex-row flex-col gap-1 mt-1 md:text-[14px] font-light">
                             <div className="flex flex-row gap-1">
                               <p className="text-[#f0bb16]">CS</p>
                               <p>@ UWaterloo, </p>
@@ -103,7 +119,7 @@ export default function Home() {
                     </div>
 
 
-                    <div className="flex flex-col justify-end">
+                    <div className="animate__animated animate__fadeIn flex flex-col justify-end">
                         <p>Explore my journey in ...</p>
                         {/* SKILL TOGGLE */}
                           <section
@@ -157,7 +173,7 @@ export default function Home() {
         </section>
 
 
-        <p className="font-raleway font-light mt-5 bg-[#0c171f] p-8 rounded-2xl">I'm a full-stack software developer expanding into ML. I've grown a sharp eye for business needs, building tools to solve real problems, increase efficiency, and turn complex problems into clean, useable products.</p>
+        <p className="font-raleway font-light mt-8 bg-[#0c171f] p-8 rounded-2xl">I'm a full-stack software developer expanding into ML. I've grown a sharp eye for business needs, building tools to solve real problems, increase efficiency, and turn complex problems into clean, useable products.</p>
 
         <div className="h-[1px] w-full flex justify-center my-10">
             <div className="bg-white h-[1px] w-1/4"/>
@@ -204,23 +220,54 @@ export default function Home() {
             </div>
 
         {/* DONE UP TO HERE!!! */}
-        <div className="mx-1 mb-5 bg-[#0b131a]/40 rounded-xl pr-10">
+        <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInVariant}
+            className="mb-5 bg-[#0b131a]/40 rounded-xl pr-10 pb-5"
+        >
+            <RenderExpProj />
+        </motion.div>
+        {/* <div className="mb-5 bg-[#0b131a]/40 rounded-xl pr-10 pb-5">
           <RenderExpProj/>
-        </div>
+        </div> */}
 
-        <div className="flex w-full items-center justify-center my-10">
+        {/* <div className="flex w-full items-center justify-center my-10">
             <div className="bg-white h-[1px] w-1/4"/>
-        </div>
+        </div> */}
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="flex w-full items-center justify-center my-10"
+        >
+            <div className="bg-white h-[1px] w-1/4"/>
+        </motion.div>
 
-        <div className="bg-[#0c171f] rounded-xl p-3 mx-1">
+        {/* <div className="bg-[#0c171f] rounded-xl p-3 mx-1">
             <Coursework/>
-        </div>
+        </div> */}
+        <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInVariant}
+            className="bg-[#0c171f] rounded-xl p-3 mx-1"
+        >
+            <Coursework/>
+        </motion.div>
+        
 
-        <Image src={SignImage} alt="BOOM!" className="w-40 h-20"/>
 
         </ExProjContext.Provider>
       </ThemeContext.Provider>
     </div>
     
+    <div className="w-full">
+        <Footer/>
+    </div>
+    </div>
   );
 }

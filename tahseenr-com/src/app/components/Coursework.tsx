@@ -9,11 +9,11 @@ const Coursework = () => {
         <div className="text-white p-8 font-poppins">
             <div className="flex flex-col">
 
-                <div className="flex flex-row gap-10">
+                <div className="flex flex-row sm:gap-10 gap-8 items-center">
                     <Image
                         src={WaterlooLogo}
                         alt="University of Waterloo"
-                        className="rounded-xl size-30"/>
+                        className="rounded-xl sm:size-30 size-25"/>
 
                     <div className="flex flex-col">
                         <div className="flex flex-row gap-3 items-center">
@@ -30,7 +30,7 @@ const Coursework = () => {
 
 
                 </div>
-                <div className="mt-5 sm:hidden block">
+                <div className="mt-8 sm:hidden block">
                         <p>Relevant courses:</p>
                         <p className="text-sm font-style: italic font-light ml-5 mt-2 opacity-80">Designing Functional Programs, Algorithm Design, Linear Algebra, Discrete Mathematics, Calculus (1/2), Combinatorics & Optimization</p>
                 </div>
@@ -43,11 +43,11 @@ const Coursework = () => {
 
             <div className="flex flex-col mb-3">
 
-                <div className="flex flex-row gap-10">
-                    <Image
-                        src={LaurierLogo}
-                        alt="Wilfrid Laurier University"
-                        className="rounded-xl size-30"/>
+                <div className="flex flex-row sm:gap-10 gap-8 items-center">
+                        <Image
+                            src={LaurierLogo}
+                            alt="Wilfrid Laurier University"
+                            className="rounded-xl sm:size-30 size-25"/>
 
                     <div className="flex flex-col">
                         <div className="flex flex-row gap-3 items-center">
@@ -64,7 +64,7 @@ const Coursework = () => {
 
 
                 </div>
-                <div className="mt-5 sm:hidden block">
+                <div className="mt-8 sm:hidden block">
                         <p>Relevant courses:</p>
                         <p className="text-sm font-style: italic font-light ml-5 mt-2 opacity-80">Understanding the Business Environment, Microeconomics, Macroeconomics, Financial Managment, Accounting</p>
                 </div>
