@@ -6,7 +6,7 @@ import WaterlooLogo from "../../../public/Uwaterloo_logo.png";
 
 const Coursework = () => {
     return (
-        <div className="text-white p-8 font-poppins">
+        <div className="text-white p-5 font-poppins">
             <div className="flex flex-col">
 
                 <div className="flex flex-row sm:gap-10 gap-8 items-center">
@@ -58,7 +58,7 @@ const Coursework = () => {
                         <p className="opacity-80">Business Administration</p>
                         <div className="mt-5 sm:block hidden">
                             <p>Relevant courses:</p>
-                            <p className="text-sm font-style: italic font-light ml-5 mt-2 opacity-80">Understanding the Business Environment, Microeconomics, Macroeconomics, Financial Managment, Accounting</p>
+                            <p className="text-sm font-style: italic font-light ml-5 mt-2 opacity-80">Business Environment, Microeconomics, Macroeconomics, Financial Managment, Accounting</p>
                         </div>
                     </div>
 
@@ -66,7 +66,7 @@ const Coursework = () => {
                 </div>
                 <div className="mt-8 sm:hidden block">
                         <p>Relevant courses:</p>
-                        <p className="text-sm font-style: italic font-light ml-5 mt-2 opacity-80">Understanding the Business Environment, Microeconomics, Macroeconomics, Financial Managment, Accounting</p>
+                        <p className="text-sm font-style: italic font-light ml-5 mt-2 opacity-80">Business Environment, Microeconomics, Macroeconomics, Financial Managment, Accounting</p>
                 </div>
                 
             </div>

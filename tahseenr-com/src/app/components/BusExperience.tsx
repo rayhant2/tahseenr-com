@@ -23,7 +23,7 @@ const BusExperience = (): React.ReactElement => {
                         start_date="Jun 2025"
                         end_date="Present"
                         logo_img={JaCanada}
-                        description="Building an AI-leveraged dashboard for clients to manage and track transactions and filings."
+                        description="Scraping and formatting over 1000+ survey entries, analyzing company-held programs’ successes and proposing strategies to help address areas of improvement"
                     />
                     <ExperienceBox 
                         position="Machine Learning Engineer"
@@ -31,7 +31,7 @@ const BusExperience = (): React.ReactElement => {
                         start_date="May 2025"
                         end_date="Present"
                         logo_img={WatStreetLogo}
-                        description="Using Python and ARIMA models to create various technical indicators and train algorithms based on stock data aggregated from yfinance"
+                        description="Algorithmic trading team"
                     />
                 </div>
             </div>

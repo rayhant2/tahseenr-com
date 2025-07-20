@@ -31,12 +31,12 @@ const ProjectsBox: React.FC<ProjectBoxProps> = ({project_name, description, proj
     
     
     return (
-        <div className="hover:shadow-xl/20 shadow-black-500 transition-shadow duration-300 flex flex-row bg-[#22303b] align-items items-center font-poppins m-4 rounded-xl h-full w-full p-6 px-7">
-            <a href={gh_link} target="_blank" rel="noopener noreferrer" className="flex flex-col sm:flex-row justify-between items-center w-full h-full gap-6">
+        <div className="hover:shadow-xl/20 shadow-black-500 transition-shadow duration-300 flex flex-row bg-[#22303b] align-items items-center font-poppins m-4 rounded-xl h-full w-full p-8 md:px-10 px-7">
+            <a href={gh_link} onClick={gh_link === "#" ? (e) => e.preventDefault() : undefined} target="_blank" rel="noopener noreferrer" className="flex flex-col md:flex-row justify-between items-center w-full h-full gap-8">
                     <div className="flex flex-col justify-center h-full gap-2">
-                        <p className="font-bold text-[20px] opacity-90 mb-1">{project_name}</p>
-                        <p className="font-raleway text-sm mb-3">{description}</p>
-                        <div className="">
+                        <p className="font-bold text-[20px] opacity-90 mb-4">{project_name}</p>
+                        <p className="font-raleway text-sm">{description}</p>
+                        <div>
                             {ReturnTags(tech_tags)}
                         </div>
                     </div>
@@ -44,7 +44,9 @@ const ProjectsBox: React.FC<ProjectBoxProps> = ({project_name, description, proj
                     <Image
                         src={project_img}
                         alt="Company Logo"
-                        className="rounded-xl size-50"/>
+                        width={"400"}
+                        className="rounded-xl"
+                        />
 
             </a>
         </div>

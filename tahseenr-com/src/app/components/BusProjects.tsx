@@ -2,16 +2,26 @@
 
 import ProjectsBox from "./ProjectsBox";
 import ProfileImage from "../../../public/TahseenRayhan.png"
+import BDOLogo from '../../../public/bdo_casecomp.png'
+import Tapi from '../../../public/tapi.png'
+
 
 const BusProj = (): React.ReactElement => {
     return (
         <div className="p-1">
             <ProjectsBox
-                project_name="Shut up Project"
-                description="Simulation of crowding and emergent behavior within a dynamic group of unrelated objects, done with PhD students at the University of Toronto."
-                project_img={ProfileImage}
-                gh_link="https://github.com/rayhant2/Boids-simulation"
-                tech_tags={["Python", "TensorFlow", "NumPy", "SciPy", "SQL", "React", "Typescript"]}
+                project_name="Top 6 - BDO x Laurier | SME ESG Strategy Case Competition"
+                description="Strategy for Food/Beverage SMEs to boost ESG efforts via a low-cost donation-based loyalty program, aligning with customer demand."
+                project_img={BDOLogo}
+                gh_link="#"
+                tech_tags={[]}
+            />
+            <ProjectsBox
+                project_name="Best Tech - Canada | JA Company Program"
+                description="Helped create a platform to connect users and bubble tea stores via a loyalty program and interactive mapping features. We helped uplift local stores’ digital presence, promote their services, and help compete against much larger franchises."
+                project_img={Tapi}
+                gh_link="#"
+                tech_tags={[]}
             />
         </div>
     );

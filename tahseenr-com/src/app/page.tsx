@@ -7,7 +7,8 @@ import BusProj from "./components/BusProjects";
 import Image from "next/image";
 import ProfileIntro from "./components/ProfileIntro";
 import Experiences from "./components/Experience";
-import ProfileImage from '../../public/TahseenRayhan.png';
+// import ProfileImage from '../../public/TahseenRayhan.png';
+import ProfileImage from '../../public/profile2.jpg';
 import ProjectsBox from "./components/ProjectsBox";
 import RenderProjects from "./components/Projects";
 import RenderExpProj from "./components/RenderExpProj";
@@ -26,7 +27,7 @@ const fadeInVariant = {
     y: 0,
     transition: {
       duration: 0.5,
-      ease: "easeOut" as const  // <-- TypeScript fix: enforce as valid easing string
+      ease: "easeOut" as const
     }
   }
 };
@@ -46,8 +47,8 @@ export default function Home() {
   }
 
   return (
-    <div>
-    <div className="min-h-screen p-8 sm:mt-10 content-center">
+    <div className="bg-[#15232e]">
+    <div className="min-h-screen p-6 sm:mt-10 sm:px-30 pt-8 content-center">
       <ThemeContext.Provider value={major}>
         
         <section id="intro" className="flex items-center justify-center">
@@ -60,7 +61,8 @@ export default function Home() {
                         alt="Profile Picture"
                         className="rounded-full size-50 aspect-square object-cover border-4 border-white"/>
 
-                    <div className="flex flex-row gap-7">
+
+                    <div className="flex flex-row gap-7 animate__animated animate__fadeIn">
                         
                         <a href="/TahseenRayhanResume.pdf" target="_blank" rel="noopener noreferrer">
                             <Image
@@ -116,11 +118,12 @@ export default function Home() {
                             </div>
                             <p className="pl-1 text-slate-400 hidden md:block">(Dual Degree)</p>
                         </div>
+                        <p className="block sm:hidden opacity-65 font-style: italic my-3">(Software / ML Developer)</p>
                     </div>
 
 
-                    <div className="animate__animated animate__fadeIn flex flex-col justify-end">
-                        <p>Explore my journey in ...</p>
+                    <div className="animate__animated animate__fadeIn flex flex-col justify-end p-2">
+                        <p>Switch between my journeys in ...</p>
                         {/* SKILL TOGGLE */}
                           <section
                         id = 'Computer Science'>
@@ -172,16 +175,28 @@ export default function Home() {
             
         </section>
 
+        <motion.p
+            initial={{ opacity: 0, y:20 }}
+            whileInView={{ opacity: 1, y:0 }}
+            transition={{ duration: 0.5, ease: "easeOut"}}
+            viewport={{ once: true }}
+            className="font-raleway font-light mt-8 bg-[#0c171f] p-8 rounded-2xl hidden sm:block">
+                I'm a full-stack software developer expanding into ML. I've grown a sharp eye for business needs, solving real problems, increase efficiency, and turn complex problems into clean, useable products.
+        </motion.p>
 
-        <p className="font-raleway font-light mt-8 bg-[#0c171f] p-8 rounded-2xl">I'm a full-stack software developer expanding into ML. I've grown a sharp eye for business needs, building tools to solve real problems, increase efficiency, and turn complex problems into clean, useable products.</p>
-
-        <div className="h-[1px] w-full flex justify-center my-10">
+        <div className="h-[1px] w-full flex justify-center sm:my-10 mt-2 sm:opacity-100 opacity-60">
             <div className="bg-white h-[1px] w-1/4"/>
         </div>
 
         <ExProjContext.Provider value={exProj}>
 
-          <div className="mt-10 mb-3 mx-1">{/* button goes here*/}
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                viewport={{ once: true }}
+                className="sm:mt-10 mt-8 mb-3 mx-1"
+            >
                 <div className="h-10 bg-[#0c171f] rounded-xl relative overflow-hidden">
 
                     {/* Moving Toggle */}
@@ -214,10 +229,7 @@ export default function Home() {
                 
                 
                 </div>
-
-                
-                
-            </div>
+            </motion.div>
 
         {/* DONE UP TO HERE!!! */}
         <motion.div
@@ -243,7 +255,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="flex w-full items-center justify-center my-10"
         >
-            <div className="bg-white h-[1px] w-1/4"/>
+            <div className="bg-white h-[1px] w-1/4 sm:opacity-100 opacity-60"/>
         </motion.div>
 
         {/* <div className="bg-[#0c171f] rounded-xl p-3 mx-1">
@@ -265,9 +277,17 @@ export default function Home() {
       </ThemeContext.Provider>
     </div>
     
-    <div className="w-full">
+
+    <motion.div
+        initial={{ opacity: 0, y:20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        viewport={{ once:true }}
+        className="w-full">
+
         <Footer/>
-    </div>
+
+    </motion.div>
     </div>
   );
 }

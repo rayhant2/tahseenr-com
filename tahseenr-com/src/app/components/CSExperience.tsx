@@ -21,7 +21,7 @@ const CompSciExperience = (): React.ReactElement => {
                         start_date="Jun 2025"
                         end_date="Present"
                         logo_img={PhilerAiLogo}
-                        description="Building an AI-leveraged dashboard for clients to manage and track transactions and filings."
+                        description=" Developing AI-powered client dashboards, optimizing management of real-estate closing processes"
                     />
                     <ExperienceBox 
                         position="Machine Learning Engineer"
@@ -29,7 +29,7 @@ const CompSciExperience = (): React.ReactElement => {
                         start_date="May 2025"
                         end_date="Present"
                         logo_img={WatStreetLogo}
-                        description="Using Python and ARIMA models to create various technical indicators and train algorithms based on stock data aggregated from yfinance"
+                        description="Algorithmic trading team"
                     />
                     <ExperienceBox 
                         position="Software Developer"
@@ -37,7 +37,7 @@ const CompSciExperience = (): React.ReactElement => {
                         start_date="Jan 2025"
                         end_date="Present"
                         logo_img={WatoLogo}
-                        description="Using ROS to build the perception stack for a full-scale 'SSH-able' humanoid."
+                        description="Autonomous perception engineering, and computer vision for a ROS-powered humanoid"
                     />
                     <ExperienceBox 
                         position="Student Researcher"
@@ -45,7 +45,7 @@ const CompSciExperience = (): React.ReactElement => {
                         start_date="Mar 2024"
                         end_date="Mar 2024"
                         logo_img={UTorontoLogo}
-                        description="Researching computer vision and data modelling software alongside Ph.D students"
+                        description="Researching Computer Vision and Computational Imaging to help the Dynamic Graphics Project simulate various physics-based, real-world simulations"
                     />
                     <ExperienceBox 
                         position="Web Developer"
