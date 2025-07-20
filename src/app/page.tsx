@@ -9,9 +9,7 @@ import Coursework from "./components/Coursework";
 import Footer from "./components/Footer";
 import 'animate.css'
 import { motion } from "motion/react"
-
-export const ThemeContext = React.createContext('Computer Science')
-export const ExProjContext = React.createContext('Experience')
+import { ThemeContext, ExProjContext } from "./contexts/ThemeContext";
 
 const fadeInVariant = {
   hidden: { opacity: 0, y: 20 },
