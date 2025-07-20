@@ -38,8 +38,8 @@ export default function Home() {
   }
 
   return (
-    <div className="bg-[#15232e]">
-    <div className="min-h-screen p-6 sm:mt-10 sm:px-30 pt-8 content-center">
+    <div>
+    <div className=" p-6 sm:mt-10 sm:px-30 pt-8 content-center">
       <ThemeContext.Provider value={major}>
         
         <section id="intro" className="flex items-center justify-center">
