@@ -20,9 +20,9 @@ const ExperienceBox: React.FC<ExperienceProps> = ({position, company, start_date
             <Image
                 src={logo_img}
                 alt="Company Logo"
-                className="rounded-xl size-25 mr-8"/>
-            <div className="w-full">
-                <div className="mb-5">
+                className="rounded-xl md:size-25 size-22 mr-8"/>
+            <div className="flex flex-col justify-center h-full w-full">
+                <div className="flex flex-col w-full">
                     <div className="flex md:flex-row flex-col md:justify-between md:items-end w-full">
                         <div className="flex flex-col w-full">
                             <div className="flex flex-row md:justify-between md:items-end w-full">
