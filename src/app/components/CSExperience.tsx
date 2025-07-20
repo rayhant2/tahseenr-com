@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image";
 import ExperienceBox from "./ExpBox"
 import WatStreetLogo from '../../../public/wat_street_logo.jpeg';
 import PhilerAiLogo from '../../../public/philer_ai_logo.jpeg';

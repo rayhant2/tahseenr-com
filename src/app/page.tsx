@@ -2,15 +2,8 @@
 
 import React, { useState } from "react";
 import Resume from "../../public/resume.svg";
-import CompSciProj from "./components/CSProjects";
-import BusProj from "./components/BusProjects";
 import Image from "next/image";
-import ProfileIntro from "./components/ProfileIntro";
-import Experiences from "./components/Experience";
-// import ProfileImage from '../../public/TahseenRayhan.png';
 import ProfileImage from '../../public/profile2.jpg';
-import ProjectsBox from "./components/ProjectsBox";
-import RenderProjects from "./components/Projects";
 import RenderExpProj from "./components/RenderExpProj";
 import Coursework from "./components/Coursework";
 import Footer from "./components/Footer";

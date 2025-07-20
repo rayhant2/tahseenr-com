@@ -1,12 +1,7 @@
 "use client"
 
-import Image from "next/image";
 import ExperienceBox from "./ExpBox"
 import WatStreetLogo from '../../../public/wat_street_logo.jpeg';
-import PhilerAiLogo from '../../../public/philer_ai_logo.jpeg';
-import UTorontoLogo from '../../../public/university_of_toronto_logo.jpeg';
-import WatoLogo from '../../../public/watonomous_logo.jpeg';
-import BrandEq from '../../../public/brandeq_logo.jpg';
 import JaCanada from '../../../public/jacanada_logo.jpeg';
 
 const BusExperience = (): React.ReactElement => {
