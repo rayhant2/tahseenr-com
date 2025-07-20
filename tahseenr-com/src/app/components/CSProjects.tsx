@@ -25,7 +25,7 @@ const CompSciProj = (): React.ReactElement => {
                 tech_tags={["Python", "NumPy", "SciPy"]}
             />
             <ProjectsBox
-                project_name="Tapi: Digital Marketing & Loyalty Rewards"
+                project_name="Tapi: Digital Marketing & Loyalty Platform"
                 description="Web app used for increasing the digital footprint for bubble-tea buisnesses and increase their foot traffic"
                 project_img={Tapi}
                 gh_link="#"
