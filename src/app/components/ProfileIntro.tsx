@@ -51,7 +51,7 @@ const ProfileIntro = (): React.ReactElement => {
                 <div className="font-poppins flex flex-col content-center">
                     <div className="mb-5">
                         <div className="flex flex-row gap-2 align-items items-end">
-                            <p>Hi, I'm</p>
+                            <p>Hi, I&apos;m</p>
                             <p className="font-bold text-3xl">Tahseen Rayhan 👋</p>
                         </div>
                         <div className="flex flex-row gap-1 mt-1 text-[14px]">
