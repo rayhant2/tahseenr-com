@@ -1,7 +1,6 @@
 "use client"
 
 import ProjectsBox from "./ProjectsBox";
-import ProfileImage from "../../../public/TahseenRayhan.png"
 import BDOLogo from '../../../public/bdo_casecomp.png'
 import Tapi from '../../../public/tapi.png'
 

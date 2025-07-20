@@ -99,7 +99,7 @@ export default function Home() {
                 <div className="font-poppins flex flex-col justify-center h-full w-full md:w-2/3 mb-5">
                     <div className="mb-5 w-full flex flex-col">
                         <div className="animate__animated animate__fadeInDown flex flex-row gap-2 align-items items-end">
-                            <p className="md:text-[18px]">Hi, I'm</p>
+                            <p className="md:text-[18px]">Hi, I&apos;m</p>
                             <p className="font-bold md:text-[33px] text-2xl">Tahseen Rayhan 👋</p>
                         </div>
                         <div className="animate__animated animate__fadeInDown flex md:flex-row flex-col gap-1 mt-1 md:text-[14px] font-light">
@@ -174,7 +174,7 @@ export default function Home() {
             transition={{ duration: 0.5, ease: "easeOut"}}
             viewport={{ once: true }}
             className="font-raleway font-light mt-8 bg-[#0c171f] p-8 rounded-2xl hidden sm:block">
-                I'm a full-stack software developer expanding into ML. I've grown a sharp eye for business needs, solving real problems, increase efficiency, and turn complex problems into clean, useable products.
+                I&apos;m a full-stack software developer expanding into ML. I&apos;ve grown a sharp eye for business needs, solving real problems, increase efficiency, and turn complex problems into clean, useable products.
         </motion.p>
 
         <div className="h-[1px] w-full flex justify-center sm:my-10 mt-2 sm:opacity-100 opacity-60">

@@ -1,7 +1,6 @@
 "use client"
 
-import React, { useContext } from "react"
-import { ThemeContext } from "../page"
+import React from "react"
 import Image, { StaticImageData } from "next/image";
 
 interface ProjectBoxProps {
