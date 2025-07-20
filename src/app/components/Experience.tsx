@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useContext } from 'react'
-import { ThemeContext } from '../page'
+import { ThemeContext } from '../contexts/ThemeContext'
 import CompSciExperience from './CSExperience'
 import BusExperience from './BusExperience'
 

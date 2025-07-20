@@ -4,7 +4,7 @@ import CompSciProj from "./CSProjects"
 import BusProj from "./BusProjects"
 
 import React, { useContext } from 'react'
-import { ExProjContext } from '../page'
+import { ExProjContext } from '../contexts/ThemeContext'
 
 const RenderProjects = () => {
     const projType = useContext(ExProjContext)
