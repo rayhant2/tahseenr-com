@@ -16,7 +16,7 @@ const BusExperience = (): React.ReactElement => {
                         position="Data Analyst"
                         company="Junior Achievement Canada"
                         start_date="Jun 2025"
-                        end_date="Present"
+                        end_date="Aug 2025"
                         logo_img={JaCanada}
                         description="Scraping and formatting over 1000+ survey entries, analyzing company-held programs’ successes and proposing strategies to help address areas of improvement"
                     />

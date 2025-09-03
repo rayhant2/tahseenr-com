@@ -24,7 +24,7 @@ const Coursework = () => {
                         <p className="opacity-80">Computer Science</p>
                         <div className="mt-5 sm:block hidden">
                             <p>Relevant courses:</p>
-                            <p className="text-sm font-style: italic font-light ml-5 mt-2 opacity-80">Designing Functional Programs, Algorithm Design, Linear Algebra, Discrete Mathematics, Calculus (1/2), Combinatorics & Optimization</p>
+                            <p className="text-sm font-style: italic font-light mt-2 opacity-80">Statistics, Algorithm Design, Object Oriented Programming, Linear Algebra, Discrete Mathematics, Calculus (1/2), Combinatorics & Optimization</p>
                         </div>
                     </div>
 
@@ -32,7 +32,7 @@ const Coursework = () => {
                 </div>
                 <div className="mt-8 sm:hidden block">
                         <p>Relevant courses:</p>
-                        <p className="text-sm font-style: italic font-light ml-5 mt-2 opacity-80">Designing Functional Programs, Algorithm Design, Linear Algebra, Discrete Mathematics, Calculus (1/2), Combinatorics & Optimization</p>
+                        <p className="text-sm font-style: italic font-light mt-2 opacity-80">Designing Functional Programs, Algorithm Design, Linear Algebra, Discrete Mathematics, Calculus (1/2), Combinatorics & Optimization</p>
                 </div>
                 
             </div>
@@ -58,7 +58,7 @@ const Coursework = () => {
                         <p className="opacity-80">Business Administration</p>
                         <div className="mt-5 sm:block hidden">
                             <p>Relevant courses:</p>
-                            <p className="text-sm font-style: italic font-light ml-5 mt-2 opacity-80">Business Environment, Microeconomics, Macroeconomics, Financial Managment, Accounting</p>
+                            <p className="text-sm font-style: italic font-light mt-2 opacity-80">Business Environment, Microeconomics, Macroeconomics, Financial Managment, Accounting</p>
                         </div>
                     </div>
 
@@ -66,7 +66,7 @@ const Coursework = () => {
                 </div>
                 <div className="mt-8 sm:hidden block">
                         <p>Relevant courses:</p>
-                        <p className="text-sm font-style: italic font-light ml-5 mt-2 opacity-80">Business Environment, Microeconomics, Macroeconomics, Financial Managment, Accounting</p>
+                        <p className="text-sm font-style: italic font-light mt-2 opacity-80">Business Environment, Microeconomics, Macroeconomics, Financial Managment, Accounting</p>
                 </div>
                 
             </div>

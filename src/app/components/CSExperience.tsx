@@ -18,7 +18,7 @@ const CompSciExperience = (): React.ReactElement => {
                         position="Software Engineer Intern"
                         company="Philer AI"
                         start_date="Jun 2025"
-                        end_date="Present"
+                        end_date="Aug 2025"
                         logo_img={PhilerAiLogo}
                         description=" Developing AI-powered client dashboards, optimizing management of real-estate closing processes"
                     />

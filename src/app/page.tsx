@@ -120,7 +120,7 @@ export default function Home() {
                         id = 'Computer Science'>
             
             <div className="m-auto w-auto">{/* button goes here*/}
-                <div className="py-2 mt-3 bg-[#0c171f] rounded-full relative overflow-hidden">
+                <div className="py-2 mt-3 bg-[#1b252b] rounded-full relative overflow-hidden">
 
                     {/* Moving Toggle */}
                     <div className="absolute top-0 bg-[#535e67] rounded-full h-full w-1/2 ease-in-out transition-all duration-300"
@@ -172,7 +172,7 @@ export default function Home() {
             transition={{ duration: 0.5, ease: "easeOut"}}
             viewport={{ once: true }}
             className="font-raleway font-light mt-8 bg-[#0c171f] p-8 rounded-2xl hidden sm:block">
-                I&apos;m a full-stack software developer expanding into ML. I&apos;ve grown a sharp eye for business needs, solving real problems, increase efficiency, and turn complex problems into clean, useable products.
+                I&apos;m a full-stack software developer with growing experience in ML. I&apos;ve grown a sharp eye for business needs, solving real problems, increase efficiency, and turn complex problems into clean, useable products.
         </motion.p>
 
         <div className="h-[1px] w-full flex justify-center sm:my-10 mt-2 sm:opacity-100 opacity-60">
@@ -188,7 +188,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="sm:mt-10 mt-8 mb-3 mx-1"
             >
-                <div className="h-10 bg-[#0c171f] rounded-xl relative overflow-hidden">
+                <div className="h-10 bg-[#1b252b] rounded-xl relative overflow-hidden">
 
                     {/* Moving Toggle */}
                     <div className="absolute top-0 bg-[#2a323b] rounded-xl h-full w-1/2 ease-in-out transition-all duration-300"
