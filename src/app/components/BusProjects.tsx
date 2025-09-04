@@ -7,7 +7,7 @@ import Tapi from '../../../public/tapi.png'
 
 const BusProj = (): React.ReactElement => {
     return (
-        <div className="p-1">
+        <div className="">
             <ProjectsBox
                 project_name="Top 6 - BDO x Laurier | SME ESG Strategy Case Competition"
                 description="Strategy for Food/Beverage SMEs to boost ESG efforts via a low-cost donation-based loyalty program, aligning with customer demand."

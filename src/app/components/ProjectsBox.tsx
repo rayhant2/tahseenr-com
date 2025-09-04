@@ -15,7 +15,7 @@ const ReturnTags = (tech_tags: string[]) => {
     return (
         <div className="flex flex-row flex-wrap gap-2 sm:gap-3">
             {tech_tags.map((tag, index) => (
-                <div key={index} className="bg-[#54787e] p-2 px-3 rounded-xl text-white text-[11px] sm:text-sm">
+                <div key={index} className="bg-[#54787e]/80  p-2 px-3 rounded-xl text-white text-[11px] sm:text-sm text-xs">
                     {tag}
                 </div>
             ))}
@@ -30,12 +30,12 @@ const ProjectsBox: React.FC<ProjectBoxProps> = ({project_name, description, proj
     
     
     return (
-        <div className="hover:shadow-xl/20 shadow-black-500 transition-shadow duration-300 flex flex-row bg-[#22303b] align-items items-center font-poppins m-4 rounded-xl h-full w-full p-8 md:px-10 px-7">
+        <div className="hover:shadow-xl/20 shadow-black-500 transition-shadow duration-300 flex flex-row bg-[#22303b]/50 align-items items-center font-poppins m-4 ml-[20px] rounded-xl h-full w-full p-8 md:px-10">
             <a href={gh_link} onClick={gh_link === "#" ? (e) => e.preventDefault() : undefined} target="_blank" rel="noopener noreferrer" className="flex flex-col md:flex-row justify-between items-center w-full h-full gap-10">
-                    <div className="flex flex-col justify-center h-full gap-2">
-                        <p className="font-bold text-[20px] opacity-90 mb-4">{project_name}</p>
-                        <p className="font-raleway text-sm">{description}</p>
-                        <div>
+                    <div className="flex flex-col justify-center h-full w-full gap-2">
+                        <p className="font-bold sm:text-[20px] text-[18px] opacity-90 sm:mb-4 mb-1">{project_name}</p>
+                        <p className="font-raleway sm:text-sm text-xs sm:mb-0 mb-2">{description}</p>
+                        <div className="sm:block hidden">
                             {ReturnTags(tech_tags)}
                         </div>
                     </div>

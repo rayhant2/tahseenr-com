@@ -9,7 +9,7 @@ import Website from '../../../public/website.png';
 
 const CompSciProj = (): React.ReactElement => {
     return (
-        <div className="w-full relative p-1">
+        <div className="w-full">
             <ProjectsBox
                 project_name="Personal Portfolio"
                 description="Learn more about me!"

@@ -15,7 +15,7 @@ const ProfileIntro = (): React.ReactElement => {
                     <Image
                         src={ProfileImage}
                         alt="Profile Picture"
-                        className="rounded-full size-35 border-4 border-white"/>
+                        className="rounded-full size-100 border-4 border-white"/>
 
                     <div className="flex flex-row gap-5">
                         
