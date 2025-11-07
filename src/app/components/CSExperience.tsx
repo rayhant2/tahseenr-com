@@ -6,6 +6,7 @@ import PhilerAiLogo from '../../../public/philer_ai_logo.jpeg';
 import UTorontoLogo from '../../../public/university_of_toronto_logo.jpeg';
 import WatoLogo from '../../../public/watonomous_logo.jpeg';
 import BrandEq from '../../../public/brandeq_logo.jpg';
+import CohereLogo from '../../../public/coherelogo.jpg';
 
 const CompSciExperience = (): React.ReactElement => {
     return (
@@ -14,6 +15,14 @@ const CompSciExperience = (): React.ReactElement => {
                 <div className="absolute left-[4.5rem] top-30 md:bottom-30 bottom-30 w-[2px] bg-white/30 rounded-full -z-10" />
 
                 <div className="flex flex-col">
+                    <ExperienceBox 
+                        position="Intern of Technical Staff"
+                        company="Cohere"
+                        start_date="Jan 2026"
+                        end_date="Apr 2026"
+                        logo_img={CohereLogo}
+                        description="Incoming Winter 2026"
+                    />
                     <ExperienceBox 
                         position="Software Engineer Intern"
                         company="Philer AI"
