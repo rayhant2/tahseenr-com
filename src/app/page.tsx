@@ -43,7 +43,7 @@ export default function Home() {
       <div style={{ 
         position: 'absolute', 
         top: '64%',   /* Move down: higher % is lower on screen */
-        left: '70%',  /* Move right: higher % is further right */
+        left: '68%',  /* Move right: higher % is further right */
         transform: 'translate(-50%, -50%)', /* Keeps the TV centered on your chosen coordinates */
         zIndex: 10 
       }}>
