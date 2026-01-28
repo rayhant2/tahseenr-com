@@ -1,0 +1,71 @@
+    /* components/TvLoop.module.css */
+.container {
+    position: relative;
+    /* Reduced by 50% from previous 800px */
+    width: 575px; 
+    aspect-ratio: 1.45; 
+}
+
+.tvOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    pointer-events: none;
+    filter: opacity(1.2) blur(0.5) brightness(0.75);
+}
+
+.screenTransform {
+    position: absolute;
+    /* Centering behind the screen hole */
+    top: 58.5%;
+    left: 47.5%;
+    width: 37%;
+    height: 30%;
+
+    /* Opposite transformation: 
+        Negative rotateY tilts the right side 'away' to match the image angle.
+    */
+    transform: 
+        translate(-50%, -50%) 
+        perspective(1000px) 
+        rotateY(-47deg) 
+        rotateX(1deg)
+        rotateZ(1.5deg);
+        
+    z-index: 10;
+    background: #000;
+    overflow: hidden;
+    border-radius: 3% / 6%;
+}
+
+.videoElement {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(0.8) brightness(1.2);
+    animation: lightPulse 4s infinite ease-in-out;
+}
+
+.screenTransform::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.01), rgba(0, 255, 0, 0.005), rgba(0, 0, 255, 0.01));
+    z-index: 11;
+    background-size: 100% 4px, 4px 100%;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+@keyframes lightPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.96; }
+}
