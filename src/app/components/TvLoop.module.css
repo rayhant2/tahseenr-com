@@ -31,7 +31,7 @@
     transform: 
         translate(-50%, -50%) 
         perspective(1000px) 
-        rotateY(-45deg) 
+        rotateY(-40deg) 
         rotateX(1deg)
         rotateZ(1.3deg);
         
@@ -62,7 +62,7 @@
     z-index: 11;
     background-size: 100% 4px, 4px 100%;
     pointer-events: none;
-    opacity: 0.8;
+    opacity: 1.0;
 }
 
 @keyframes lightPulse {
