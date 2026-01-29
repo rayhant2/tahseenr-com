@@ -1,9 +1,21 @@
-    /* components/TvLoop.module.css */
+
+.myText {
+    font-family: "Pretendard", sans-serif;
+    font-weight: 400;
+    /* Optional: add a slight letter-spacing for that clean ML-dev look */
+    letter-spacing: -0.02em; 
+}
+
+
 .container {
     position: relative;
-    /* Reduced by 50% from previous 800px */
-    width: 560px; 
+    /* Changed from 545px to viewport width units */
+    width: 35vw; 
+    /* Maintains the shape regardless of width */
     aspect-ratio: 1.45; 
+    /* Optional: Keep it from getting too tiny or too massive */
+    min-width: 300px;
+    max-width: 800px;
 }
 
 .tvOverlay {
