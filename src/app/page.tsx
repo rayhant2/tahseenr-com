@@ -23,6 +23,7 @@ const styles = {
   background: {
     objectFit: "cover" as const,
     zIndex: 0,
+    filter: "brightness(1.4) contrast(0.8)"
   },
   textBlock: {
     position: "absolute" as const,
@@ -113,9 +114,9 @@ export default function Home() {
 
         <div style={{fontFamily: "Pretendard", fontSize: "0.9vw", lineHeight: "1.6", color: "#000", maxWidth: "720px",}}
               className="ml-2">
-          I am an <p className="font-bold inline-flex mx-2">Intern of Technical Staff</p> at
+          I am an <p className="font-bold inline-flex mx-1">Intern of Technical Staff</p> at
           
-          <span className="inline-flex items-center gap-1 px-2 py-[2px] ml-3 mr-2 bg-white/70 rounded-md align-middle">
+          <span className="inline-flex items-center gap-1 px-2 py-[2px] ml-2 mb-1 bg-white/70 rounded-md align-middle">
             <Image src={"/coherelogo.png"} alt={"Cohere"} width={22} height={22} />
             <span className="text-[15px] font-semibold text-[#1e1e1e] leading-none">
               {"Cohere"}
@@ -128,7 +129,7 @@ export default function Home() {
           <div className="text-black ml-3 mt-7">&&</div>
           <div style={{fontFamily: "Pretendard", fontSize: "0.9vw", lineHeight: "1.6", color: "#000", maxWidth: "680px",}}
               className="ml-2 mt-7">
-          I study <p className="inline-flex mr-2 ml-2 font-bold">Computer Science</p> at
+          I study <p className="inline-flex mx-1 font-bold">Computer Science</p> at
           <span className="inline-flex items-center gap-1 px-2 py-[3px] ml-3 mr-2 mb-[3px] bg-white/70 rounded-md align-middle">
             <Image src={'/Uwaterloo_logo.png'} alt={"University of Waterloo"} width={20} height={20} />
             <span className="text-[15px] font-semibold text-[#1e1e1e] leading-none ml-1">
@@ -136,7 +137,7 @@ export default function Home() {
             </span>
           </span>
           
-          , <p className="inline-flex mr-2 ml-2 font-bold">BBA</p> at
+          , <p className="inline-flex mr-1 font-bold">BBA</p> at
           <span className="inline-flex items-center gap-1 px-2 py-[3px] ml-3 mb-[3px] bg-white/70 rounded-md align-middle">
             <Image src={'/laurier_logo.png'} alt={"Wilfrid Laurier University"} width={20} height={20} />
             <span className="text-[15px] font-semibold text-[#1e1e1e] leading-none ml-1">
