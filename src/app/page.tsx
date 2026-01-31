@@ -14,7 +14,7 @@ export default function Home() {
       {/* 1. MOBILE BACKGROUND */}
       <div className="block md:hidden absolute inset-0 z-0">
         <Image
-          src="/background.webp" // Fixed: lowercase 'b' to match other blocks for production consistency
+          src="/background/Background.webp" // Fixed: lowercase 'b' to match other blocks for production consistency
           alt="Mobile Background"
           fill
           priority
@@ -30,7 +30,7 @@ export default function Home() {
       {/* 2. TABLET/IPAD BACKGROUND */}
       <div className="hidden md:block lg:hidden absolute inset-0 z-0">
         <Image
-          src="/background.webp"
+          src="/background/Background.webp"
           alt="Tablet Background"
           fill
           priority
@@ -46,7 +46,7 @@ export default function Home() {
       {/* 3. DESKTOP BACKGROUND */}
       <div className="hidden lg:block absolute inset-0 z-0">
         <Image
-          src="/background.webp"
+          src="/background/Background.webp"
           alt="Desktop Background"
           fill
           priority
