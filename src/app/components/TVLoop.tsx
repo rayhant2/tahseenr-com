@@ -36,26 +36,29 @@ export default function TvLoop() {
     }
     };
 
-    useEffect(() => {
+    // Updated useEffect in TVLoop.tsx
+useEffect(() => {
     const video = videoRef.current;
     if (video) {
-        // 🔑 Forces the DOM element to be muted regardless of React's state
-        video.muted = true; 
-        video.defaultMuted = true;
+        video.muted = true;
+        video.playsInline = true;
 
-        const attemptPlay = async () => {
-            try {
-                // 🔑 Re-loading the video ensures the new src is ready for autoplay
-                video.load(); 
-                await video.play();
-            } catch (e) {
-                console.log("Autoplay blocked, attempting with mute:", e);
-                // Secondary attempt: some browsers need a second nudge
-                video.muted = true;
-                video.play();
+        const attemptPlay = () => {
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise.catch((error) => {
+                    console.error("Autoplay blocked by Safari:", error);
+                    // Fallback: Try playing again on first user interaction
+                    const playOnGesture = () => {
+                        video.play();
+                        document.removeEventListener('click', playOnGesture);
+                    };
+                    document.addEventListener('click', playOnGesture);
+                });
             }
         };
 
+        video.load();
         attemptPlay();
     }
 }, [currentVideo]);

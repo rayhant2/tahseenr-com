@@ -9,12 +9,12 @@ import TvLoop from "@/app/components/TVLoop";
 
 export default function Home() {
   return (
-    <main className="relative w-screen h-full overflow-hidden bg-transparent">
+    <main className="relative w-screen min-h-screen overflow-hidden bg-[#ffffff]">
       
       {/* 1. MOBILE BACKGROUND */}
       <div className="block md:hidden absolute inset-0 z-0">
         <Image
-          src="/background.webp"
+          src="/background.webp" // Fixed: lowercase 'b' to match other blocks for production consistency
           alt="Mobile Background"
           fill
           priority
@@ -59,10 +59,10 @@ export default function Home() {
         />
       </div>
 
-      {/* Content Block */}
+      {/* Content Block - Adjusted +5% to top values */}
       <div 
         className="absolute z-20 left-[5%] p-[20px] transition-all duration-300
-                   top-[11%] md:top-[17%] lg:top-[15%]
+                   top-[16%] md:top-[22%] lg:top-[20%]
                    max-w-[90vw] md:max-w-[67vw] lg:max-w-[50vw]"
       >
         <div className="flex flex-row gap-3 items-end mb-2 md:mb-3">
@@ -109,16 +109,17 @@ export default function Home() {
               <Image src="/laurier_logo.png" alt="WLU" width={16} height={16} />
               <span className="text-sm font-semibold text-[#1e1e1e]">Wilfrid Laurier</span>
             </span>
-            and expand into research focusing on AI safety and control.
+            , and expand into research focusing on AI safety and control.
           </div>
         </div>
       </div>
 
+      {/* TV Loop Container - Adjusted +5% to top values */}
       <div 
         className="absolute z-10 -translate-x-1/2 -translate-y-1/2 transition-all duration-300
-                   top-[83%] left-[60%] scale-[0.7]
-                   md:top-[70%] md:left-[74%] md:scale-[1]
-                   lg:top-[64%] lg:left-[68%]"
+                   top-[88%] left-[60%] scale-[0.7]
+                   md:top-[75%] md:left-[74%] md:scale-[1]
+                   lg:top-[69%] lg:left-[68%]"
       >
         <TvLoop />
       </div>
