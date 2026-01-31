@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import "animate.css";
 import "@fontsource/pretendard";
 import "@fontsource/pretendard/400.css";
@@ -25,7 +26,7 @@ const styles = {
   },
   textBlock: {
     position: "absolute" as const,
-    top: "20%",
+    top: "15%",
     left: "5%",
     zIndex: 20,
     padding: "40px",
@@ -40,9 +41,10 @@ const styles = {
   title: {
     fontFamily: "Pretendard",
     fontWeight: 400,
-    fontSize: "1.5vw",
+    fontSize: "1.1vw",
     marginTop: "4px",
-    marginBottom: "13px",
+    marginLeft: "4px",
+    marginBottom: "20px",
     color: "#1e1e1e",
   },
   subtitle: {
@@ -77,9 +79,9 @@ function InlineBadge({
   text: string;
 }) {
   return (
-    <span className="inline-flex items-center gap-1 px-2 py-[2px] mx-1 bg-white rounded-md align-middle">
-      <Image src={src} alt={alt} width={16} height={16} />
-      <span className="text-sm font-semibold text-[#1e1e1e] leading-none">
+    <span className="inline-flex items-center gap-1 px-2 py-[2px] mx-1 bg-white/70 rounded-md align-middle">
+      <Image src={src} alt={alt} width={22} height={22} />
+      <span className="text-[15px] font-semibold text-[#1e1e1e] leading-none">
         {text}
       </span>
     </span>
@@ -104,32 +106,62 @@ export default function Home() {
       <div style={styles.textBlock}>
         <div className="flex flex-row gap-4 items-end">
           <h1 style={styles.name}>Tahseen Rayhan</h1>
-          <p style={styles.title}>ML Developer</p>
+          <p style={styles.title}>[SWE / ML]</p>
+        </div>
+
+        <div className="flex flex-row gap-6 ml-3 mb-15 items-center" style={{color:"black"}}>
+            <Link href="/files/TahseenRayhanResume.pdf" target="_blank" rel="noopener noreferrer" className="underline text-xl text-black">
+              Resume
+            </Link>
+            <p className="text-sm font-bold">\\</p>
+            <Link href="https://www.linkedin.com/in/tahseenr/" target="_blank" rel="noopener noreferrer" className="underline text-xl text-black">
+              LinkedIn
+            </Link>
+            <p className="text-sm font-bold">\\</p>
+            <Link href="https://github.com/rayhant2" target="_blank" rel="noopener noreferrer" className="underline text-xl text-black">
+              Github
+            </Link>
+            <p className="text-sm font-bold">\\</p>
+            <Link href="https://x.com/tahseenr0" target="_blank" rel="noopener noreferrer" className="underline text-xl text-black">
+              X
+            </Link>
+            
         </div>
 
 
-        <div style={{fontFamily: "Pretendard", fontSize: "1.05vw", lineHeight: "1.6", color: "#1e1e1e", maxWidth: "680px",}}>
-          I am an Intern of Technical Staff at
-          <InlineBadge
-            src="/coherelogo.png"
-            alt="Cohere"
-            text="Cohere"
-          />
-          , working on evaluating and improving LLMs to help support reliable model iteration and deployment.
-          On a daily basis, I help build eval pipelines using model judgements to surface regressions, weaknesses,
-          and comparative performance, while assessing model quality over time. I study Computer Science at the
-          <InlineBadge
-            src='/Uwaterloo_logo.png'
-            alt="University of Waterloo"
-            text="University of Waterloo"
-          />
-          , and Business at
-          <InlineBadge
-            src="/laurier_logo.png"
-            alt="Wilfrid Laurier University"
-            text="Wilfrid Laurier"
-          />
-          , and I am expanding into ML research focusing on evaluation, safety, and
+        <div style={{fontFamily: "Pretendard", fontSize: "0.9vw", lineHeight: "1.6", color: "#000", maxWidth: "720px",}}
+              className="ml-2">
+          I am an <p className="font-bold inline-flex mx-2">Intern of Technical Staff</p> at
+          
+          <span className="inline-flex items-center gap-1 px-2 py-[2px] ml-3 mr-2 bg-white/70 rounded-md align-middle">
+            <Image src={"/coherelogo.png"} alt={"Cohere"} width={22} height={22} />
+            <span className="text-[15px] font-semibold text-[#1e1e1e] leading-none">
+              {"Cohere"}
+            </span>
+          </span>
+          , helping bridge human intuition and model performance using LLM evaluations. 
+          I focus on human-in-the-loop (HITL) infrastructure using human-grounded analytics to analyze 
+          inter-rater reliability (IRR), surface performance regressions, and drive model refinement.
+          </div>
+          <div className="text-black ml-3 mt-7">&&</div>
+          <div style={{fontFamily: "Pretendard", fontSize: "0.9vw", lineHeight: "1.6", color: "#000", maxWidth: "680px",}}
+              className="ml-2 mt-7">
+          I study <p className="inline-flex mr-2 ml-2 font-bold">Computer Science</p> at
+          <span className="inline-flex items-center gap-1 px-2 py-[3px] ml-3 mr-2 mb-[3px] bg-white/70 rounded-md align-middle">
+            <Image src={'/Uwaterloo_logo.png'} alt={"University of Waterloo"} width={20} height={20} />
+            <span className="text-[15px] font-semibold text-[#1e1e1e] leading-none ml-1">
+              {"University of Waterloo"}
+            </span>
+          </span>
+          
+          , <p className="inline-flex mr-2 ml-2 font-bold">BBA</p> at
+          <span className="inline-flex items-center gap-1 px-2 py-[3px] ml-3 mb-[3px] bg-white/70 rounded-md align-middle">
+            <Image src={'/laurier_logo.png'} alt={"Wilfrid Laurier University"} width={20} height={20} />
+            <span className="text-[15px] font-semibold text-[#1e1e1e] leading-none ml-1">
+              {"Wilfrid Laurier"}
+            </span>
+          </span>
+          and I'm expanding into ML research focusing on evals, safety, and
           control for agentic and physical AI systems.
         </div>
         {/* Cohere badge */}
