@@ -62,7 +62,7 @@ export default function Home() {
       {/* Content Block */}
       <div 
         className="absolute z-20 left-[5%] p-[20px] transition-all duration-300
-                   top-[13%] md:top-[22%] lg:top-[20%]
+                   top-[11.5%] md:top-[22%] lg:top-[20%]
                    max-w-[90vw] md:max-w-[67vw] lg:max-w-[50vw]"
       >
         <div className="flex flex-row gap-3 items-end mb-2 md:mb-3">
@@ -84,7 +84,7 @@ export default function Home() {
           <Link href="https://x.com/tahseenr0" target="_blank" className="underline text-md md:text-xl">X</Link>
         </div>
 
-        <div className="max-w-[720px] max-h-[35vh] md:max-h-[calc(64vh-180px)] overflow-y-auto no-scrollbar space-y-6">
+        <div className="max-w-[720px] max-h-[35vh] md:max-h-[calc(64vh-180px)] overflow-y-auto no-scrollbar space-y-3 md:space-y-6">
           <div className="font-pretendard text-sm md:text-lg lg:text-[1.1rem] leading-relaxed text-black ml-1">
             I&apos;m an <span className="font-bold">Intern of Technical Staff</span> at&nbsp;
             <span className="inline-flex items-center gap-1 px-2 py-[2px] mr-1 bg-white md:bg-white/70 rounded-md align-middle border border-black/5">
