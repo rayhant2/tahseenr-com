@@ -69,24 +69,6 @@ const styles = {
   },
 };
 
-function InlineBadge({
-  src,
-  alt,
-  text,
-}: {
-  src: string;
-  alt: string;
-  text: string;
-}) {
-  return (
-    <span className="inline-flex items-center gap-1 px-2 py-[2px] mx-1 bg-white/70 rounded-md align-middle">
-      <Image src={src} alt={alt} width={22} height={22} />
-      <span className="text-[15px] font-semibold text-[#1e1e1e] leading-none">
-        {text}
-      </span>
-    </span>
-  );
-}
 /* ---------------------------------- */
 /* Component                           */
 /* ---------------------------------- */
