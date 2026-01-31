@@ -37,10 +37,28 @@ export default function TvLoop() {
     };
 
     useEffect(() => {
-    if (videoRef.current) {
-        videoRef.current.play().catch(e => console.log("Autoplay blocked:", e));
+    const video = videoRef.current;
+    if (video) {
+        // 🔑 Forces the DOM element to be muted regardless of React's state
+        video.muted = true; 
+        video.defaultMuted = true;
+
+        const attemptPlay = async () => {
+            try {
+                // 🔑 Re-loading the video ensures the new src is ready for autoplay
+                video.load(); 
+                await video.play();
+            } catch (e) {
+                console.log("Autoplay blocked, attempting with mute:", e);
+                // Secondary attempt: some browsers need a second nudge
+                video.muted = true;
+                video.play();
+            }
+        };
+
+        attemptPlay();
     }
-    }, [currentVideo]);
+}, [currentVideo]);
 
     return (
         <div className={styles.container}>
