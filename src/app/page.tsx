@@ -5,160 +5,105 @@ import Link from "next/link";
 import "animate.css";
 import "@fontsource/pretendard";
 import "@fontsource/pretendard/400.css";
-import UW from "../../public/Uwaterloo_logo.png";
-import WLU from "../../public/laurier_logo.png";
-
 import TvLoop from "@/app/components/TVLoop";
 
-/* ---------------------------------- */
-/* Styles                              */
-/* ---------------------------------- */
 const styles = {
-  container: {
-    position: "relative" as const,
-    width: "100vw",
-    height: "100vh",
-    overflow: "hidden",
-  },
   background: {
     objectFit: "cover" as const,
     zIndex: 0,
-    filter: "brightness(1.4) contrast(0.8)"
+    filter: "brightness(var(--bg-brightness, 1)) contrast(0.8)",
+    objectPosition: "center var(--bg-pos, -20%)", 
+    transform: "scale(var(--bg-scale, 1.9))", 
+    transition: "all 0.3s ease",
   },
   textBlock: {
     position: "absolute" as const,
-    top: "15%",
+    top: "var(--text-top, 8%)",
     left: "5%",
     zIndex: 20,
-    padding: "40px",
-  },
-  name: {
-    fontFamily: "Pretendard",
-    fontWeight: 600,
-    fontSize: "3.6vw",
-    margin: 0,
-    color: "black",
-  },
-  title: {
-    fontFamily: "Pretendard",
-    fontWeight: 400,
-    fontSize: "1.1vw",
-    marginTop: "4px",
-    marginLeft: "4px",
-    marginBottom: "20px",
-    color: "#1e1e1e",
-  },
-  subtitle: {
-    fontFamily: "Pretendard",
-    color: "#1e1e1e",
-    marginBottom: "6px",
-  },
-  company: {
-    fontFamily: "Pretendard",
-    fontWeight: 600,
-    fontSize: "1.1vw",
-    color: "#1e1e1e",
-    margin: 0,          // 🔑 removes default <p> margin
-    lineHeight: "24px", // 🔑 vertically centers with logo
+    padding: "20px",
+    maxWidth: "90vw",
+    transition: "top 0.3s ease",
   },
   tvWrapper: {
     position: "absolute" as const,
-    top: "64%",
-    left: "68%",
-    transform: "translate(-50%, -50%)",
+    top: "var(--tv-top, 64%)",
+    left: "var(--tv-left, 68%)",
+    transform: "translate(-50%, -50%) scale(var(--tv-scale, 1))",
     zIndex: 10,
+    transition: "all 0.3s ease",
   },
 };
 
-/* ---------------------------------- */
-/* Component                           */
-/* ---------------------------------- */
 export default function Home() {
   return (
-    <main style={styles.container}>
-      {/* Background */}
+    <main 
+      /* 🔑 Changed [--tv-left:75%] to [--tv-left:60%] for small screens */
+      className="relative w-screen h-full overflow-hidden bg-[#d1d1d1] 
+                 [--bg-brightness:1.6] [--bg-scale:1.9] [--bg-pos:-20%] [--text-top:11%]
+                 md:[--bg-brightness:1.4] md:[--bg-scale:1.0] md:[--bg-pos:30%] md:[--text-top:22%]
+                 [--tv-top:83%] [--tv-left:60%] [--tv-scale:0.8] 
+                 md:[--tv-top:64%] md:[--tv-left:68%] md:[--tv-scale:1]"
+    >
       <Image
         src="/background.webp"
         alt="Background"
         fill
         priority
         style={styles.background}
+        sizes="100vw"
       />
 
-      {/* Intro Text */}
       <div style={styles.textBlock}>
-        <div className="flex flex-row gap-4 items-end">
-          <h1 style={styles.name}>Tahseen Rayhan</h1>
-          <p style={styles.title}>[SWE / ML]</p>
+        <div className="flex flex-row gap-3 items-end mb-2 md:mb-3">
+          <h1 className="font-pretendard font-semibold text-3xl md:text-5xl lg:text-6xl text-black m-0 leading-tight">
+            Tahseen Rayhan
+          </h1>
+          <p className="font-pretendard font-normal text-sm md:text-base lg:text-lg text-[#1e1e1e] mb-1 whitespace-nowrap">
+            [SWE / ML]
+          </p>
         </div>
 
-        <div className="flex flex-row gap-6 ml-3 mb-15 items-center" style={{color:"black"}}>
-            <Link href="/files/TahseenRayhanResume.pdf" target="_blank" rel="noopener noreferrer" className="underline text-xl text-black">
-              Resume
-            </Link>
-            <p className="text-sm font-bold">\\</p>
-            <Link href="https://www.linkedin.com/in/tahseenr/" target="_blank" rel="noopener noreferrer" className="underline text-xl text-black">
-              LinkedIn
-            </Link>
-            <p className="text-sm font-bold">\\</p>
-            <Link href="https://github.com/rayhant2" target="_blank" rel="noopener noreferrer" className="underline text-xl text-black">
-              Github
-            </Link>
-            <p className="text-sm font-bold">\\</p>
-            <Link href="https://x.com/tahseenr0" target="_blank" rel="noopener noreferrer" className="underline text-xl text-black">
-              X
-            </Link>
-            
+        <div className="flex flex-row flex-wrap gap-4 md:gap-6 ml-1 mb-8 items-center text-[#111111]">
+          <Link href="/files/TahseenRayhanResume.pdf" target="_blank" className="underline text-md md:text-xl">Resume</Link>
+          <p className="text-sm font-bold opacity-30">\\</p>
+          <Link href="https://linkedin.com/in/tahseenr/" target="_blank" className="underline text-md md:text-xl">LinkedIn</Link>
+          <p className="text-sm font-bold opacity-30">\\</p>
+          <Link href="https://github.com/rayhant2" target="_blank" className="underline text-md md:text-xl">Github</Link>
+          <p className="text-sm font-bold opacity-30">\\</p>
+          <Link href="https://x.com/tahseenr0" target="_blank" className="underline text-md md:text-xl">X</Link>
         </div>
 
-
-        <div style={{fontFamily: "Pretendard", fontSize: "0.9vw", lineHeight: "1.6", color: "#000", maxWidth: "720px",}}
-              className="ml-2">
-          I am an <p className="font-bold inline-flex mx-1">Intern of Technical Staff</p> at
-          
-          <span className="inline-flex items-center gap-1 px-2 py-[2px] ml-2 mb-1 bg-white/70 rounded-md align-middle">
-            <Image src={"/coherelogo.png"} alt={"Cohere"} width={22} height={22} />
-            <span className="text-[15px] font-semibold text-[#1e1e1e] leading-none">
-              {"Cohere"}
+        <div className="max-w-[720px] max-h-[35vh] md:max-h-[calc(64vh-180px)] overflow-y-auto no-scrollbar space-y-6">
+          <div className="font-pretendard text-sm md:text-lg lg:text-[1.1rem] leading-relaxed text-black ml-1">
+            I&apos;m an <span className="font-bold">Intern of Technical Staff</span> at&nbsp;
+            <span className="inline-flex items-center gap-1 px-2 py-[2px] mr-1 bg-white/70 rounded-md align-middle border border-black/5">
+              <Image src="/coherelogo.png" alt="Cohere" width={18} height={18} />
+              <span className="text-sm font-semibold text-[#1e1e1e]">Cohere</span>
             </span>
-          </span>
-          , helping bridge human intuition and model performance using LLM evaluations. 
-          I focus on human-in-the-loop (HITL) infrastructure using human-grounded analytics to analyze 
-          inter-rater reliability (IRR), surface performance regressions, and drive model refinement.
+            working on AI evaluations. 
+            I focus on human-in-the-loop infrastructure using human-grounded analytics to analyze 
+            IRR, surface performance regressions, and drive refinement.
           </div>
-          <div className="text-black ml-3 mt-7">&&</div>
-          <div style={{fontFamily: "Pretendard", fontSize: "0.9vw", lineHeight: "1.6", color: "#000", maxWidth: "680px",}}
-              className="ml-2 mt-7">
-          I study <p className="inline-flex mx-1 font-bold">Computer Science</p> at
-          <span className="inline-flex items-center gap-1 px-2 py-[3px] ml-3 mr-2 mb-[3px] bg-white/70 rounded-md align-middle">
-            <Image src={'/Uwaterloo_logo.png'} alt={"University of Waterloo"} width={20} height={20} />
-            <span className="text-[15px] font-semibold text-[#1e1e1e] leading-none ml-1">
-              {"University of Waterloo"}
+
+          <div className="text-black ml-1 font-bold text-xs md:text-lg">&&</div>
+
+          <div className="font-pretendard text-sm md:text-lg lg:text-[1.1rem] leading-relaxed text-black ml-1">
+            I study <span className="font-bold">Computer Science</span> at&nbsp;
+            <span className="inline-flex items-center gap-1 px-2 py-[2px] bg-white/70 rounded-md align-middle border border-black/5">
+              <Image src="/Uwaterloo_logo.png" alt="UW" width={16} height={16} />
+              <span className="text-sm font-semibold text-[#1e1e1e]">UWaterloo</span>
             </span>
-          </span>
-          
-          , <p className="inline-flex mr-1 font-bold">BBA</p> at
-          <span className="inline-flex items-center gap-1 px-2 py-[3px] ml-3 mb-[3px] bg-white/70 rounded-md align-middle">
-            <Image src={'/laurier_logo.png'} alt={"Wilfrid Laurier University"} width={20} height={20} />
-            <span className="text-[15px] font-semibold text-[#1e1e1e] leading-none ml-1">
-              {"Wilfrid Laurier"}
+            , <span className="font-bold">BBA</span> at&nbsp;
+            <span className="inline-flex items-center gap-1 px-2 py-[3px] bg-white/70 rounded-md align-middle border border-black/5">
+              <Image src="/laurier_logo.png" alt="WLU" width={16} height={16} />
+              <span className="text-sm font-semibold text-[#1e1e1e]">Wilfrid Laurier</span>
             </span>
-          </span>
-          and I'm expanding into ML research focusing on evals, safety, and
-          control for agentic and physical AI systems.
+            , and expand into research focusing on AI safety and control.
+          </div>
         </div>
-        {/* Cohere badge */}
-        
-
-        
-
-        
-
-
-
       </div>
 
-      {/* TV Loop */}
       <div style={styles.tvWrapper}>
         <TvLoop />
       </div>
