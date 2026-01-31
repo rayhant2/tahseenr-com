@@ -6,14 +6,23 @@
     letter-spacing: -0.02em; 
 }
 
-
 .container {
+    /* Background fix from screenshot */
+    background: url('/background/Background.webp') no-repeat;
+    background-size: cover;
+    background-position: center 40%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Behind everything */
+}
+
+.tvWrapper {
     position: relative;
-    /* Changed from 545px to viewport width units */
     width: 35vw; 
-    /* Maintains the shape regardless of width */
     aspect-ratio: 1.45; 
-    /* Optional: Keep it from getting too tiny or too massive */
     min-width: 300px;
     max-width: 800px;
 }

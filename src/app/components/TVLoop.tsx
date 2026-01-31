@@ -1,4 +1,3 @@
-    // components/TvLoop.tsx
 "use client";
 
 import { useState, useRef, useEffect } from 'react';
@@ -21,65 +20,65 @@ export default function TvLoop() {
     const videoRef = useRef<HTMLVideoElement>(null);
 
     const pickNextVideo = () => {
-    if (isTV_STATICNext) {
-        setCurrentVideo(TV_STATIC);
-        setIsTV_STATICNext(false);
-    } else {
-        let nextIndex;
-        do {
-        nextIndex = Math.floor(Math.random() * MAIN_VIDEOS.length);
-        } while (nextIndex === lastMainIndex);
+        if (isTV_STATICNext) {
+            setCurrentVideo(TV_STATIC);
+            setIsTV_STATICNext(false);
+        } else {
+            let nextIndex;
+            do {
+                nextIndex = Math.floor(Math.random() * MAIN_VIDEOS.length);
+            } while (nextIndex === lastMainIndex);
 
-        setLastMainIndex(nextIndex);
-        setCurrentVideo(MAIN_VIDEOS[nextIndex]);
-        setIsTV_STATICNext(true);
-    }
+            setLastMainIndex(nextIndex);
+            setCurrentVideo(MAIN_VIDEOS[nextIndex]);
+            setIsTV_STATICNext(true);
+        }
     };
 
-    // Updated useEffect in TVLoop.tsx
-useEffect(() => {
-    const video = videoRef.current;
-    if (video) {
-        video.muted = true;
-        video.playsInline = true;
+    useEffect(() => {
+        const video = videoRef.current;
+        if (video) {
+            // Force attributes for Safari compliance
+            video.muted = true;
+            video.playsInline = true;
 
-        const attemptPlay = () => {
-            const playPromise = video.play();
-            if (playPromise !== undefined) {
-                playPromise.catch((error) => {
-                    console.error("Autoplay blocked by Safari:", error);
-                    // Fallback: Try playing again on first user interaction
-                    const playOnGesture = () => {
-                        video.play();
-                        document.removeEventListener('click', playOnGesture);
-                    };
-                    document.addEventListener('click', playOnGesture);
-                });
-            }
-        };
+            const attemptPlay = () => {
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch((error) => {
+                        console.error("Autoplay blocked:", error);
+                        // Fallback: start on first user interaction
+                        const playOnGesture = () => {
+                            video.play();
+                            document.removeEventListener('click', playOnGesture);
+                        };
+                        document.addEventListener('click', playOnGesture);
+                    });
+                }
+            };
 
-        video.load();
-        attemptPlay();
-    }
-}, [currentVideo]);
+            video.load();
+            attemptPlay();
+        }
+    }, [currentVideo]);
 
     return (
-        <div className={styles.container}>
+        <div className={styles.tvWrapper}> 
             <div className={styles.screenTransform}>
-            <video
-                ref={videoRef}
-                src={currentVideo}
-                onEnded={pickNextVideo}
-                muted
-                autoPlay
-                playsInline
-                className={styles.videoElement}
-            />
+                <video
+                    ref={videoRef}
+                    src={currentVideo}
+                    onEnded={pickNextVideo}
+                    muted
+                    autoPlay
+                    playsInline // CamelCase is required for React/Next.js
+                    className={styles.videoElement}
+                />
             </div>
             <img 
-            src="/tv_plant.png" 
-            alt="TV and Plant Overlay" 
-            className={styles.tvOverlay} 
+                src="/tv_plant.png" 
+                alt="TV and Plant Overlay" 
+                className={styles.tvOverlay} 
             />
         </div>
     );

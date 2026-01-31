@@ -11,18 +11,18 @@ export default function Home() {
   return (
     <main className="relative w-screen min-h-screen overflow-hidden bg-[#ffffff]">
       
-      {/* 1. MOBILE BACKGROUND */}
+      {/* 1. MOBILE BACKGROUND - Enlarged and translated vertically up */}
       <div className="block md:hidden absolute inset-0 z-0">
         <Image
-          src="/background/Background.webp" // Fixed: lowercase 'b' to match other blocks for production consistency
+          src="/background/Background.webp"
           alt="Mobile Background"
           fill
           priority
           style={{
             objectFit: "cover",
             filter: "brightness(1.6) contrast(0.8)",
-            objectPosition: "center -20%",
-            transform: "scale(1.9)",
+            /* objectPosition: center and a negative percentage or px shifts it UP */
+            transform: "scale(2.2) translateY(-5.5%)", // Increased scale for mobile
           }}
         />
       </div>
@@ -59,10 +59,10 @@ export default function Home() {
         />
       </div>
 
-      {/* Content Block - Adjusted +5% to top values */}
+      {/* Content Block */}
       <div 
         className="absolute z-20 left-[5%] p-[20px] transition-all duration-300
-                   top-[16%] md:top-[22%] lg:top-[20%]
+                   top-[13%] md:top-[22%] lg:top-[20%]
                    max-w-[90vw] md:max-w-[67vw] lg:max-w-[50vw]"
       >
         <div className="flex flex-row gap-3 items-end mb-2 md:mb-3">
@@ -109,15 +109,15 @@ export default function Home() {
               <Image src="/laurier_logo.png" alt="WLU" width={16} height={16} />
               <span className="text-sm font-semibold text-[#1e1e1e]">Wilfrid Laurier</span>
             </span>
-            , and expand into research focusing on AI safety and control.
+            , and expanding into research focusing on AI safety and control.
           </div>
         </div>
       </div>
 
-      {/* TV Loop Container - Adjusted +5% to top values */}
+      {/* TV Loop Container - Enlarged for Mobile and positioned */}
       <div 
         className="absolute z-10 -translate-x-1/2 -translate-y-1/2 transition-all duration-300
-                   top-[88%] left-[60%] scale-[0.7]
+                   top-[80%] left-[60%] scale-[0.8] 
                    md:top-[75%] md:left-[74%] md:scale-[1]
                    lg:top-[69%] lg:left-[68%]"
       >
