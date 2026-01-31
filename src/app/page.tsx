@@ -37,11 +37,11 @@ const styles = {
 export default function Home() {
   return (
     <main 
-      className="relative w-screen h-full overflow-hidden bg-[#d1d1d1] 
-                 [--bg-brightness:1.6] [--bg-scale:1.9] [--bg-pos:-20%] [--text-top:11%]
-                 md:[--bg-brightness:1.4] md:[--bg-scale:1.3] md:[--bg-pos:30%] md:[--text-top:17%]
+      className="relative w-screen h-full overflow-hidden
+                 [--bg-brightness:1.6] [--bg-scale:1.9] [--text-top:14%]
+                 md:[--bg-brightness:1.4] md:[--bg-scale:1.18] md:[--bg-pos:30%] md:[--text-top:18%]
                  [--tv-top:83%] [--tv-left:60%] [--tv-scale:0.8] 
-                 md:[--tv-top:70%] md:[--tv-left:74%] md:[--tv-scale:1]"
+                 md:[--tv-top:73%] md:[--tv-left:72%] md:[--tv-scale:1]"
     >
       <Image
         src="/background.webp"
@@ -88,7 +88,7 @@ export default function Home() {
 
           <div className="font-pretendard text-sm md:text-lg lg:text-[1.1rem] leading-relaxed text-black ml-1">
             I study <span className="font-bold">Computer Science</span> at&nbsp;
-            <span className="inline-flex items-center gap-1 px-2 py-[2px] mr-1 bg-white md:bg-white/70 rounded-md align-middle border border-black/5">
+            <span className="inline-flex items-center gap-1 px-2 py-[2px] mr-1 mb-1 bg-white md:bg-white/70 rounded-md align-middle border border-black/5">
               <Image src="/Uwaterloo_logo.png" alt="UW" width={16} height={16} />
               <span className="text-sm font-semibold text-[#1e1e1e]">UWaterloo</span>
             </span>
