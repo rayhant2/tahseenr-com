@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  /* Keep these for text and UI elements, but don't let them block the background */
   --background: #0a141d;
   --foreground: #ffffff;
 }
@@ -12,28 +13,37 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a141d;
-    --foreground: #ededed;
-  }
-}
-
+/* Ensure the document height is locked for your h-full main container */
 html, body, :root {
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
-
 
 body {
-  background: var(--background);
+  /* 🔑 Set background to transparent or remove the var(--background) 
+     to ensure it doesn't cover your /background.webp image */
+  background: transparent;
   color: var(--foreground);
-  font-family: "Pretendard", 'Roboto';
+  font-family: "Pretendard", 'Roboto', sans-serif;
+  overflow: hidden; /* Prevent document-level scrolling */
 }
 
-.font-poppins{
+/* Utility classes for your specific fonts */
+.font-poppins {
   font-family: var(--font-poppins);
 }
 
-.font-raleway{
+.font-raleway {
   font-family: var(--font-raleway);
+}
+
+/* Custom scrollbar hiding for your 'About' section */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
