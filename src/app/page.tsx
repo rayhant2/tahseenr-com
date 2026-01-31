@@ -22,8 +22,7 @@ const styles = {
     left: "5%",
     zIndex: 20,
     padding: "20px",
-    maxWidth: "90vw",
-    transition: "top 0.3s ease",
+    transition: "all 0.3s ease",
   },
   tvWrapper: {
     position: "absolute" as const,
@@ -38,12 +37,11 @@ const styles = {
 export default function Home() {
   return (
     <main 
-      /* 🔑 Changed [--tv-left:75%] to [--tv-left:60%] for small screens */
       className="relative w-screen h-full overflow-hidden bg-[#d1d1d1] 
                  [--bg-brightness:1.6] [--bg-scale:1.9] [--bg-pos:-20%] [--text-top:11%]
-                 md:[--bg-brightness:1.4] md:[--bg-scale:1.0] md:[--bg-pos:30%] md:[--text-top:22%]
+                 md:[--bg-brightness:1.4] md:[--bg-scale:1.3] md:[--bg-pos:30%] md:[--text-top:17%]
                  [--tv-top:83%] [--tv-left:60%] [--tv-scale:0.8] 
-                 md:[--tv-top:64%] md:[--tv-left:68%] md:[--tv-scale:1]"
+                 md:[--tv-top:70%] md:[--tv-left:74%] md:[--tv-scale:1]"
     >
       <Image
         src="/background.webp"
@@ -54,9 +52,9 @@ export default function Home() {
         sizes="100vw"
       />
 
-      <div style={styles.textBlock}>
+      <div style={styles.textBlock} className="max-w-[90vw] md:max-w-[67vw] lg:max-w-[50vw]">
         <div className="flex flex-row gap-3 items-end mb-2 md:mb-3">
-          <h1 className="font-pretendard font-semibold text-3xl md:text-5xl lg:text-6xl text-black m-0 leading-tight">
+          <h1 className="font-pretendard font-semibold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-black m-0 leading-tight">
             Tahseen Rayhan
           </h1>
           <p className="font-pretendard font-normal text-sm md:text-base lg:text-lg text-[#1e1e1e] mb-1 whitespace-nowrap">
@@ -64,20 +62,20 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="flex flex-row flex-wrap gap-4 md:gap-6 ml-1 mb-8 items-center text-[#111111]">
+        <div className="flex flex-row flex-wrap gap-4 md:gap-6 md:mb-12 ml-1 mb-8 items-center text-[#111111]">
           <Link href="/files/TahseenRayhanResume.pdf" target="_blank" className="underline text-md md:text-xl">Resume</Link>
-          <p className="text-sm font-bold opacity-30">\\</p>
+          <p className="text-sm font-bold opacity-70">\\</p>
           <Link href="https://linkedin.com/in/tahseenr/" target="_blank" className="underline text-md md:text-xl">LinkedIn</Link>
-          <p className="text-sm font-bold opacity-30">\\</p>
+          <p className="text-sm font-bold opacity-70">\\</p>
           <Link href="https://github.com/rayhant2" target="_blank" className="underline text-md md:text-xl">Github</Link>
-          <p className="text-sm font-bold opacity-30">\\</p>
+          <p className="text-sm font-bold opacity-70">\\</p>
           <Link href="https://x.com/tahseenr0" target="_blank" className="underline text-md md:text-xl">X</Link>
         </div>
 
         <div className="max-w-[720px] max-h-[35vh] md:max-h-[calc(64vh-180px)] overflow-y-auto no-scrollbar space-y-6">
           <div className="font-pretendard text-sm md:text-lg lg:text-[1.1rem] leading-relaxed text-black ml-1">
             I&apos;m an <span className="font-bold">Intern of Technical Staff</span> at&nbsp;
-            <span className="inline-flex items-center gap-1 px-2 py-[2px] mr-1 bg-white/70 rounded-md align-middle border border-black/5">
+            <span className="inline-flex items-center gap-1 px-2 py-[2px] mr-1 bg-white md:bg-white/70 rounded-md align-middle border border-black/5">
               <Image src="/coherelogo.png" alt="Cohere" width={18} height={18} />
               <span className="text-sm font-semibold text-[#1e1e1e]">Cohere</span>
             </span>
@@ -90,16 +88,16 @@ export default function Home() {
 
           <div className="font-pretendard text-sm md:text-lg lg:text-[1.1rem] leading-relaxed text-black ml-1">
             I study <span className="font-bold">Computer Science</span> at&nbsp;
-            <span className="inline-flex items-center gap-1 px-2 py-[2px] bg-white/70 rounded-md align-middle border border-black/5">
+            <span className="inline-flex items-center gap-1 px-2 py-[2px] mr-1 bg-white md:bg-white/70 rounded-md align-middle border border-black/5">
               <Image src="/Uwaterloo_logo.png" alt="UW" width={16} height={16} />
               <span className="text-sm font-semibold text-[#1e1e1e]">UWaterloo</span>
             </span>
             , <span className="font-bold">BBA</span> at&nbsp;
-            <span className="inline-flex items-center gap-1 px-2 py-[3px] bg-white/70 rounded-md align-middle border border-black/5">
+            <span className="inline-flex items-center gap-1 px-2 py-[3px] md:mr-0 mr-1 bg-white md:bg-white/70 rounded-md align-middle border border-black/5">
               <Image src="/laurier_logo.png" alt="WLU" width={16} height={16} />
               <span className="text-sm font-semibold text-[#1e1e1e]">Wilfrid Laurier</span>
             </span>
-            , and expand into research focusing on AI safety and control.
+            and expand into research focusing on AI safety and control.
           </div>
         </div>
       </div>
