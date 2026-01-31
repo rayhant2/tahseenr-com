@@ -1,49 +1,27 @@
 @import "tailwindcss";
 
 :root {
-  /* Keep these for text and UI elements, but don't let them block the background */
-  --background: #0a141d;
+  /* Keep foreground for text, but nullify background */
   --foreground: #ffffff;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-/* Ensure the document height is locked for your h-full main container */
+/* Ensure the root containers are transparent to let the Image show through */
 html, body, :root {
   height: 100%;
   margin: 0;
   padding: 0;
+  background: none !important; /* Forces the browser to ignore solid colors */
 }
 
 body {
-  /* 🔑 Set background to transparent or remove the var(--background) 
-     to ensure it doesn't cover your /background.webp image */
-  background: transparent;
   color: var(--foreground);
   font-family: "Pretendard", 'Roboto', sans-serif;
-  overflow: hidden; /* Prevent document-level scrolling */
+  overflow: hidden;
 }
 
-/* Utility classes for your specific fonts */
-.font-poppins {
-  font-family: var(--font-poppins);
-}
+/* Maintain your custom font utilities */
+.font-poppins { font-family: var(--font-poppins); }
+.font-raleway { font-family: var(--font-raleway); }
 
-.font-raleway {
-  font-family: var(--font-raleway);
-}
-
-/* Custom scrollbar hiding for your 'About' section */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
