@@ -87,10 +87,15 @@ export default function Home() {
         <div className="max-w-[720px] max-h-[35vh] md:max-h-[calc(64vh-180px)] overflow-y-auto no-scrollbar space-y-3 md:space-y-6">
           <div className="font-pretendard text-sm md:text-lg lg:text-[1.1rem] leading-relaxed text-black ml-1">
             I&apos;m an <span className="font-bold">Intern of Technical Staff</span> at&nbsp;
-            <span className="inline-flex items-center gap-1 px-2 py-[2px] mr-1 bg-white md:bg-white/70 rounded-md align-middle border border-black/5">
+            <a 
+              href="https://cohere.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-flex items-center gap-1 px-2 py-[2px] mr-1 bg-white md:bg-white/60 rounded-md align-middle border border-black/5 hover:bg-white hover:border-black/10 transition-all duration-200"
+            >
               <Image src="/coherelogo.png" alt="Cohere" width={18} height={18} />
               <span className="text-sm font-semibold text-[#1e1e1e]">Cohere</span>
-            </span>
+            </a>
             working on AI evaluations. 
             I focus on human-in-the-loop infrastructure using human-grounded analytics to analyze 
             IRR, surface performance regressions, and drive refinement.
@@ -100,15 +105,25 @@ export default function Home() {
 
           <div className="font-pretendard text-sm md:text-lg lg:text-[1.1rem] leading-relaxed text-black ml-1">
             I study <span className="font-bold">Computer Science</span> at&nbsp;
-            <span className="inline-flex items-center gap-1 px-2 py-[2px] mr-1 bg-white md:bg-white/70 rounded-md align-middle border border-black/5">
+            <a 
+              href="https://uwaterloo.ca/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-flex items-center gap-1 px-2 py-[2px] mr-1 bg-white md:bg-white/60 rounded-md align-middle border border-black/5 hover:bg-white hover:border-black/10 transition-all duration-200"
+            >
               <Image src="/Uwaterloo_logo.png" alt="UW" width={16} height={16} />
               <span className="text-sm font-semibold text-[#1e1e1e]">UWaterloo</span>
-            </span>
-           , <span className="font-bold">BBA</span> at&nbsp;
-            <span className="inline-flex items-center gap-1 px-2 py-[3px] md:mr-0 mr-1 bg-white md:bg-white/70 rounded-md align-middle border border-black/5">
+            </a>
+            , <span className="font-bold">BBA</span> at&nbsp;
+            <a 
+              href="https://www.wlu.ca/academics/faculties/lazaridis-school-of-business-and-economics/index.html" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-flex items-center gap-1 px-2 py-[3px] md:mr-0 mr-1 bg-white md:bg-white/60 rounded-md align-middle border border-black/5 hover:bg-white hover:border-black/10 transition-all duration-200"
+            >
               <Image src="/laurier_logo.png" alt="WLU" width={16} height={16} />
               <span className="text-sm font-semibold text-[#1e1e1e]">Wilfrid Laurier</span>
-            </span>
+            </a>
             , and expanding into research focusing on AI safety and control.
           </div>
         </div>
