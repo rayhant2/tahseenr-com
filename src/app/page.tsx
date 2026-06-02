@@ -85,7 +85,7 @@ export default function Home() {
         </div>
 
         <div className="font-pretendard text-sm md:text-lg lg:text-[1.1rem] leading-relaxed text-black ml-1">
-            I'm a <span className="font-bold">Computer Science</span> student @&nbsp;
+            I'm a <span className="font-bold">Computer Science</span> student at&nbsp;
             <a 
               href="https://uwaterloo.ca/" 
               target="_blank" 
@@ -95,7 +95,7 @@ export default function Home() {
               <Image src="/Uwaterloo_logo.png" alt="UW" width={16} height={16} />
               <span className="text-sm font-semibold text-[#1e1e1e]">UWaterloo</span>
             </a>
-            , <span className="font-bold">BBA</span> @&nbsp;
+            , <span className="font-bold">BBA</span> at&nbsp;
             <a 
               href="https://www.wlu.ca/academics/faculties/lazaridis-school-of-business-and-economics/index.html" 
               target="_blank" 
