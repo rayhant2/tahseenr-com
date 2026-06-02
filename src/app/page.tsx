@@ -20,7 +20,7 @@ export default function Home() {
           priority
           style={{
             objectFit: "cover",
-            filter: "brightness(1.6) contrast(0.8)",
+            filter: "brightness(1.6) contrast(0.8) opacity(0.9)",
             /* objectPosition: center and a negative percentage or px shifts it UP */
             transform: "scale(2.2) translateY(-5.5%)", // Increased scale for mobile
           }}
@@ -36,7 +36,7 @@ export default function Home() {
           priority
           style={{
             objectFit: "cover",
-            filter: "brightness(1.4) contrast(0.8)",
+            filter: "brightness(1.4) contrast(0.8) opacity(0.9)",
             objectPosition: "center 30%",
             transform: "scale(1.3)",
           }}
@@ -52,7 +52,7 @@ export default function Home() {
           priority
           style={{
             objectFit: "cover",
-            filter: "brightness(1.4) contrast(0.8)",
+            filter: "brightness(1.4) contrast(0.8) opacity(0.9)",
             objectPosition: "center 40%",
             transform: "scale(1.05)",
           }}
@@ -129,9 +129,9 @@ export default function Home() {
           <Image
             src="/fakesignature.png"
             alt="Signature"
-            width={68}
-            height={40}
-            className="mt-6 invert"
+            width={85}
+            height={50}
+            className="mt-7 invert"
           />
         </div>
       </div>
