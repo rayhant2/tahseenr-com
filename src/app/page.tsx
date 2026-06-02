@@ -122,7 +122,7 @@ export default function Home() {
               <Image src="/coherelogo.png" alt="Cohere" width={18} height={18} />
               <span className="text-sm font-semibold text-[#1e1e1e]">Cohere</span>
             </a>
-            as an <span className="font-bold">Intern of Technical Staff</span> building LLM evaluation infrastructure using human eval data, helping with
+            as an <span className="font-bold">Intern of Technical Staff</span> building LLM evaluation infrastructure with human eval data, helping with
             the refinement of frontier models.
           </div>
 
