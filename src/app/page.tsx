@@ -105,14 +105,14 @@ export default function Home() {
               <Image src="/laurier_logo.png" alt="WLU" width={16} height={16} />
               <span className="text-sm font-semibold text-[#1e1e1e]">Wilfrid Laurier</span>
             </a>
-            , and working on research focused on VLMs and Preference Learning.
+            , building at the intersection of ML real-world data.
           </div>
 
         <div className="text-black ml-1 my-4 font-bold text-xs md:text-lg">&</div>
 
         <div className="max-w-[720px] max-h-[35vh] md:max-h-[calc(64vh-180px)] overflow-y-auto no-scrollbar space-y-3 md:space-y-6">
           <div className="font-pretendard text-sm md:text-lg lg:text-[1.1rem] leading-relaxed text-black ml-1">
-            Recently, I interned at&nbsp;
+            Most recently at&nbsp;
             <a 
               href="https://cohere.com" 
               target="_blank" 
@@ -122,8 +122,8 @@ export default function Home() {
               <Image src="/coherelogo.png" alt="Cohere" width={18} height={18} />
               <span className="text-sm font-semibold text-[#1e1e1e]">Cohere</span>
             </a>
-            as an <span className="font-bold">Intern of Technical Staff</span> building LLM evaluation infrastructure with human eval data, helping with
-            the refinement of frontier models.
+            , I helped ship LLM evaluation infrastructure, refining some of the world's top frontier models,
+            and currently researching in multilingual VLMs and Preference Learning.
           </div>
 
           <Image
