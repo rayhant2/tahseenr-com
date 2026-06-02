@@ -105,7 +105,7 @@ export default function Home() {
               <Image src="/laurier_logo.png" alt="WLU" width={16} height={16} />
               <span className="text-sm font-semibold text-[#1e1e1e]">Wilfrid Laurier</span>
             </a>
-            , building at the intersection of ML real-world data.
+            , building at the intersection of ML and real-world data.
           </div>
 
         <div className="text-black ml-1 my-4 font-bold text-xs md:text-lg">&</div>
