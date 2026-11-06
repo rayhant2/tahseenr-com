@@ -1,27 +1,6 @@
-@import "tailwindcss";
-
-:root {
-  /* Keep foreground for text, but nullify background */
-  --foreground: #ffffff;
-}
-
-/* Ensure the root containers are transparent to let the Image show through */
-html, body, :root {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background: none !important; /* Forces the browser to ignore solid colors */
-}
-
+html,
 body {
-  color: var(--foreground);
-  font-family: "Pretendard", 'Roboto', sans-serif;
-  overflow: hidden;
+  min-height: 100%;
+  margin: 0;
+  background: #ffffff;
 }
-
-/* Maintain your custom font utilities */
-.font-poppins { font-family: var(--font-poppins); }
-.font-raleway { font-family: var(--font-raleway); }
-
-.no-scrollbar::-webkit-scrollbar { display: none; }
-.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
