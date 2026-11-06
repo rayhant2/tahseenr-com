@@ -6,16 +6,6 @@
   --page-background: #ffffff;
   --foreground: #111111;
   --lamp-color: #300c03;
-  --toggle-background: rgba(95, 168, 240, 0.94);
-  --toggle-border: rgba(25, 91, 158, 0.78);
-}
-
-html[data-theme="dark"] {
-  --page-background: #080a08;
-  --foreground: #f0ede6;
-  --lamp-color: #c9826c;
-  --toggle-background: rgba(42, 111, 181, 0.94);
-  --toggle-border: rgba(124, 187, 248, 0.82);
 }
 
 html,
@@ -35,14 +25,18 @@ body {
   min-height: 100svh;
   overflow: hidden;
   background: var(--page-background);
-  transition: background-color 180ms ease;
 }
 
 .ascii-background {
   position: fixed;
   inset: 0;
   z-index: 0;
+  clip-path: inset(0 0 100% 0);
   contain: strict;
+}
+
+.ascii-background.is-loaded {
+  animation: ascii-background-reveal 300ms linear forwards;
 }
 
 .ascii-background__image {
@@ -53,16 +47,10 @@ body {
   transform-origin: center;
 }
 
-.ascii-background__image--dark {
-  display: none;
-}
-
-html[data-theme="dark"] .ascii-background__image--light {
-  display: none;
-}
-
-html[data-theme="dark"] .ascii-background__image--dark {
-  display: block;
+@keyframes ascii-background-reveal {
+  to {
+    clip-path: inset(0);
+  }
 }
 
 .ascii-lamps {
@@ -249,38 +237,6 @@ html[data-theme="dark"] .ascii-background__image--dark {
   text-decoration: none;
 }
 
-.theme-toggle {
-  position: fixed;
-  top: clamp(0.85rem, 2.2vw, 1.35rem);
-  right: clamp(0.85rem, 2.2vw, 1.35rem);
-  z-index: 5;
-  display: grid;
-  width: clamp(2.1rem, 3vw, 2.45rem);
-  aspect-ratio: 1;
-  padding: 0;
-  place-items: center;
-  border: 1px solid var(--toggle-border);
-  border-radius: 50%;
-  background: var(--toggle-background);
-  color: var(--foreground);
-  cursor: pointer;
-  font-size: clamp(0.95rem, 1.3vw, 1.15rem);
-  transition:
-    color 180ms ease,
-    background-color 180ms ease,
-    border-color 180ms ease,
-    transform 150ms ease;
-}
-
-.theme-toggle:hover {
-  transform: scale(1.06);
-}
-
-.theme-toggle:focus-visible {
-  outline: 2px solid var(--foreground);
-  outline-offset: 3px;
-}
-
 .ascii-grass {
   position: fixed;
   right: 0;
@@ -306,6 +262,12 @@ html[data-theme="dark"] .ascii-background__image--dark {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .ascii-background,
+  .ascii-background.is-loaded {
+    clip-path: none;
+    animation: none;
+  }
+
   .ascii-lamp__swing {
     animation: none;
   }

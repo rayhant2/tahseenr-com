@@ -7,6 +7,8 @@ const TAU = Math.PI * 2;
 const ATLAS_MIN_SIZE = 4;
 const ATLAS_MAX_SIZE = 14;
 const ATLAS_CELL_SIZE = 22;
+const GRASS_COLOR = "#072600";
+const GRASS_OUTLINE = "rgba(255, 255, 255, 0.97)";
 
 type Blade = {
   baseX: number;
@@ -36,16 +38,6 @@ type GlyphAtlas = {
   canvas: HTMLCanvasElement;
   cellPixels: number;
 };
-
-type GrassTheme = "light" | "dark";
-
-const GRASS_PALETTES = {
-  dark: { grass: "#8ebd7c", outline: "rgba(8, 10, 8, 0.97)" },
-  light: { grass: "#072600", outline: "rgba(255, 255, 255, 0.97)" },
-} as const;
-
-const getGrassTheme = (): GrassTheme =>
-  document.documentElement.dataset.theme === "dark" ? "dark" : "light";
 
 const createGlyphAtlas = (pixelRatio: number, color: string): GlyphAtlas => {
   const atlas = document.createElement("canvas");
@@ -169,9 +161,6 @@ export default function AsciiGrass() {
     let animationFrame = 0;
     let blades: Blade[] = [];
     let glyphAtlas: GlyphAtlas | null = null;
-    let glyphAtlases: Record<GrassTheme, GlyphAtlas> | null = null;
-    let outlineColor = GRASS_PALETTES[getGrassTheme()].outline;
-    let pixelRatio = 1;
     let cssHeight = 0;
     let cssWidth = 0;
     let lastFrameTime = 0;
@@ -183,7 +172,7 @@ export default function AsciiGrass() {
 
     const resize = () => {
       const bounds = canvas.getBoundingClientRect();
-      pixelRatio = Math.min(
+      const pixelRatio = Math.min(
         window.devicePixelRatio || 1,
         window.innerWidth <= 480 ? 1.25 : 1.5,
       );
@@ -194,14 +183,7 @@ export default function AsciiGrass() {
       canvas.height = Math.round(cssHeight * pixelRatio);
       context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
       blades = makeBlades(cssWidth, cssHeight);
-      const theme = getGrassTheme();
-      const palette = GRASS_PALETTES[theme];
-      outlineColor = palette.outline;
-      glyphAtlases = {
-        dark: createGlyphAtlas(pixelRatio, GRASS_PALETTES.dark.grass),
-        light: createGlyphAtlas(pixelRatio, GRASS_PALETTES.light.grass),
-      };
-      glyphAtlas = glyphAtlases[theme];
+      glyphAtlas = createGlyphAtlas(pixelRatio, GRASS_COLOR);
     };
 
     const drawGlyph = (
@@ -289,7 +271,7 @@ export default function AsciiGrass() {
         context.save();
         context.lineCap = "round";
         context.lineJoin = "round";
-        context.strokeStyle = outlineColor;
+        context.strokeStyle = GRASS_OUTLINE;
         const outlineBands = 4;
         for (let band = 0; band < outlineBands; band += 1) {
           const startSegment = Math.floor(
@@ -380,22 +362,10 @@ export default function AsciiGrass() {
       restart();
     });
 
-    const updateTheme = () => {
-      const theme = getGrassTheme();
-      const palette = GRASS_PALETTES[theme];
-      outlineColor = palette.outline;
-      glyphAtlas = glyphAtlases?.[theme] ?? glyphAtlas;
-
-      if (reducedMotion.matches && !document.hidden) {
-        animationFrame = window.requestAnimationFrame(render);
-      }
-    };
-
     resize();
     resizeObserver.observe(canvas);
     reducedMotion.addEventListener("change", restart);
     document.addEventListener("visibilitychange", restart);
-    window.addEventListener("themechange", updateTheme);
     restart();
 
     return () => {
@@ -403,7 +373,6 @@ export default function AsciiGrass() {
       resizeObserver.disconnect();
       reducedMotion.removeEventListener("change", restart);
       document.removeEventListener("visibilitychange", restart);
-      window.removeEventListener("themechange", updateTheme);
     };
   }, []);
 
