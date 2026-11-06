@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { FiMail } from "react-icons/fi";
 import { FaGithub, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
+import AsciiGrass from "./components/AsciiGrass";
 
 const socialStubs = [
   { label: "Email", icon: FiMail },
@@ -58,6 +59,8 @@ export default function Home() {
           ))}
         </nav>
       </div>
+
+      <AsciiGrass />
     </main>
   );
 }
