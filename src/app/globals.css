@@ -31,11 +31,19 @@ body {
   position: fixed;
   inset: 0;
   z-index: 0;
-  clip-path: inset(0 0 100% 0);
+  overflow: hidden;
   contain: strict;
 }
 
-.ascii-background.is-loaded {
+.ascii-background::after {
+  position: absolute;
+  inset: 0;
+  background: var(--page-background);
+  content: "";
+  transform: translate3d(0, 0, 0);
+}
+
+.ascii-background.is-loaded::after {
   animation: ascii-background-reveal 300ms linear forwards;
 }
 
@@ -49,7 +57,7 @@ body {
 
 @keyframes ascii-background-reveal {
   to {
-    clip-path: inset(0);
+    transform: translate3d(0, 100%, 0);
   }
 }
 
@@ -262,10 +270,10 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ascii-background,
-  .ascii-background.is-loaded {
-    clip-path: none;
+  .ascii-background::after,
+  .ascii-background.is-loaded::after {
     animation: none;
+    display: none;
   }
 
   .ascii-lamp__swing {
