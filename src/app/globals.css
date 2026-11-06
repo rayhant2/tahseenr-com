@@ -31,9 +31,94 @@ body {
   object-fit: cover;
   object-position: center;
   filter: invert(1);
-  transform: translateX(clamp(0.35rem, 1.4vw, 1.5rem))
+  transform: translateX(calc(clamp(0.175rem, 0.7vw, 0.75rem) + 2px))
     translateY(clamp(0.75rem, 2vh, 1.5rem)) scaleX(0.966) scaleY(1.05);
   transform-origin: center;
+}
+
+.ascii-lamps {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ascii-lamp {
+  position: absolute;
+  top: 50%;
+  width: clamp(8rem, 13vw, 11.5rem);
+  aspect-ratio: 4 / 5;
+  transform: translateY(-70%);
+}
+
+.ascii-lamp--left {
+  left: calc(14% - clamp(4rem, 6.5vw, 5.75rem));
+}
+
+.ascii-lamp--right {
+  right: calc(14% - clamp(4rem, 6.5vw, 5.75rem));
+  transform: translateY(-70%) scaleX(-1);
+}
+
+.ascii-lamp__layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: #300c03;
+  mask-image: url("/ascii-left-lamp.png"), url("/ascii-left-lamp.png"),
+    url("/ascii-left-lamp.png"), url("/ascii-left-lamp.png"),
+    url("/ascii-left-lamp.png");
+  mask-mode: luminance;
+  mask-position:
+    50% 50%,
+    calc(50% - 0.75px) 50%,
+    calc(50% + 0.75px) 50%,
+    50% calc(50% - 0.75px),
+    50% calc(50% + 0.75px);
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  filter: none;
+}
+
+.ascii-lamp__mount {
+  clip-path: inset(0 0 78% 0);
+}
+
+.ascii-lamp__swing {
+  clip-path: inset(18.5% 0 0 0);
+  transform-origin: 50% 18.5%;
+  animation: ascii-lamp-sway 6.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+.ascii-lamp--left .ascii-lamp__swing {
+  animation-delay: -1.05s;
+}
+
+.ascii-lamp--right .ascii-lamp__swing {
+  animation-delay: -0.68s;
+}
+
+@keyframes ascii-lamp-sway {
+  0%,
+  100% {
+    transform: rotate(-1.4deg);
+  }
+
+  24% {
+    transform: rotate(1.65deg);
+  }
+
+  51% {
+    transform: rotate(-1deg);
+  }
+
+  76% {
+    transform: rotate(1.25deg);
+  }
 }
 
 .site-content {
@@ -131,6 +216,7 @@ body {
   place-items: center;
   color: #111111;
   font-size: clamp(1.17rem, 1.305vw, 1.485rem);
+  text-decoration: none;
 }
 
 .ascii-grass {
@@ -148,6 +234,18 @@ body {
   display: block;
   width: 100%;
   height: 100%;
+}
+
+@media (min-width: 700px) {
+  .ascii-lamps {
+    display: block;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ascii-lamp__swing {
+    animation: none;
+  }
 }
 
 @media (max-width: 480px) {

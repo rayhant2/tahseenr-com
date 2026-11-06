@@ -2,12 +2,17 @@ import Image from "next/image";
 import { FiMail } from "react-icons/fi";
 import { FaGithub, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 import AsciiGrass from "./components/AsciiGrass";
+import AsciiLamps from "./components/AsciiLamps";
 
-const socialStubs = [
-  { label: "Email", icon: FiMail },
-  { label: "LinkedIn", icon: FaLinkedinIn },
-  { label: "GitHub", icon: FaGithub },
-  { label: "X", icon: FaXTwitter },
+const socialLinks = [
+  { label: "Email", href: "mailto:seen.rayhan@gmail.com", icon: FiMail },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/tahseenr/",
+    icon: FaLinkedinIn,
+  },
+  { label: "GitHub", href: "https://github.com/rayhant2", icon: FaGithub },
+  { label: "X", href: "https://x.com/tahseenr0", icon: FaXTwitter },
 ];
 
 export default function Home() {
@@ -24,6 +29,8 @@ export default function Home() {
         />
       </div>
 
+      <AsciiLamps />
+
       <div className="site-content">
         <header className="intro">
           <h1>Tahseen Rayhan</h1>
@@ -35,27 +42,40 @@ export default function Home() {
           <ul>
             <li>
               <span aria-hidden="true">↳</span>
-              <a href="https://cohere.com">Cohere</a>
+              <a
+                href="https://cohere.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Cohere
+              </a>
             </li>
             <li>
               <span aria-hidden="true">↳</span>
-              <a href="https://labscommunity.cohere.com/blog/2026/tiny-aya-vision/">
+              <a
+                href="https://labscommunity.cohere.com/blog/2026/tiny-aya-vision/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Tiny Aya Vision
               </a>
             </li>
           </ul>
         </section>
 
-        <nav className="social-stubs" aria-label="Social links coming soon">
-          {socialStubs.map(({ label, icon: Icon }) => (
-            <span
+        <nav className="social-stubs" aria-label="Social links">
+          {socialLinks.map(({ label, href, icon: Icon }) => (
+            <a
               className="social-stub"
               key={label}
-              aria-label={`${label} link coming soon`}
-              title={`${label} link coming soon`}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              title={label}
             >
               <Icon aria-hidden="true" />
-            </span>
+            </a>
           ))}
         </nav>
       </div>
