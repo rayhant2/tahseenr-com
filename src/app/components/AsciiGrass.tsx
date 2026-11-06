@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react";
 
 const LOOP_DURATION = 9400;
 const TAU = Math.PI * 2;
-const GRASS_COLOR = "#072600";
 const ATLAS_MIN_SIZE = 4;
 const ATLAS_MAX_SIZE = 14;
 const ATLAS_CELL_SIZE = 22;
@@ -38,7 +37,17 @@ type GlyphAtlas = {
   cellPixels: number;
 };
 
-const createGlyphAtlas = (pixelRatio: number): GlyphAtlas => {
+type GrassTheme = "light" | "dark";
+
+const GRASS_PALETTES = {
+  dark: { grass: "#8ebd7c", outline: "rgba(8, 10, 8, 0.97)" },
+  light: { grass: "#072600", outline: "rgba(255, 255, 255, 0.97)" },
+} as const;
+
+const getGrassTheme = (): GrassTheme =>
+  document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+
+const createGlyphAtlas = (pixelRatio: number, color: string): GlyphAtlas => {
   const atlas = document.createElement("canvas");
   const cellPixels = Math.ceil(ATLAS_CELL_SIZE * pixelRatio);
   const atlasScale = cellPixels / ATLAS_CELL_SIZE;
@@ -57,8 +66,8 @@ const createGlyphAtlas = (pixelRatio: number): GlyphAtlas => {
   atlasContext.textAlign = "center";
   atlasContext.textBaseline = "middle";
   atlasContext.lineJoin = "round";
-  atlasContext.fillStyle = GRASS_COLOR;
-  atlasContext.strokeStyle = GRASS_COLOR;
+  atlasContext.fillStyle = color;
+  atlasContext.strokeStyle = color;
   atlasContext.lineWidth = 1.4;
 
   for (let size = ATLAS_MIN_SIZE; size <= ATLAS_MAX_SIZE; size += 1) {
@@ -160,6 +169,9 @@ export default function AsciiGrass() {
     let animationFrame = 0;
     let blades: Blade[] = [];
     let glyphAtlas: GlyphAtlas | null = null;
+    let glyphAtlases: Record<GrassTheme, GlyphAtlas> | null = null;
+    let outlineColor = GRASS_PALETTES[getGrassTheme()].outline;
+    let pixelRatio = 1;
     let cssHeight = 0;
     let cssWidth = 0;
     let lastFrameTime = 0;
@@ -171,7 +183,7 @@ export default function AsciiGrass() {
 
     const resize = () => {
       const bounds = canvas.getBoundingClientRect();
-      const pixelRatio = Math.min(
+      pixelRatio = Math.min(
         window.devicePixelRatio || 1,
         window.innerWidth <= 480 ? 1.25 : 1.5,
       );
@@ -182,7 +194,14 @@ export default function AsciiGrass() {
       canvas.height = Math.round(cssHeight * pixelRatio);
       context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
       blades = makeBlades(cssWidth, cssHeight);
-      glyphAtlas = createGlyphAtlas(pixelRatio);
+      const theme = getGrassTheme();
+      const palette = GRASS_PALETTES[theme];
+      outlineColor = palette.outline;
+      glyphAtlases = {
+        dark: createGlyphAtlas(pixelRatio, GRASS_PALETTES.dark.grass),
+        light: createGlyphAtlas(pixelRatio, GRASS_PALETTES.light.grass),
+      };
+      glyphAtlas = glyphAtlases[theme];
     };
 
     const drawGlyph = (
@@ -270,7 +289,7 @@ export default function AsciiGrass() {
         context.save();
         context.lineCap = "round";
         context.lineJoin = "round";
-        context.strokeStyle = "rgba(255, 255, 255, 0.97)";
+        context.strokeStyle = outlineColor;
         const outlineBands = 4;
         for (let band = 0; band < outlineBands; band += 1) {
           const startSegment = Math.floor(
@@ -361,10 +380,22 @@ export default function AsciiGrass() {
       restart();
     });
 
+    const updateTheme = () => {
+      const theme = getGrassTheme();
+      const palette = GRASS_PALETTES[theme];
+      outlineColor = palette.outline;
+      glyphAtlas = glyphAtlases?.[theme] ?? glyphAtlas;
+
+      if (reducedMotion.matches && !document.hidden) {
+        animationFrame = window.requestAnimationFrame(render);
+      }
+    };
+
     resize();
     resizeObserver.observe(canvas);
     reducedMotion.addEventListener("change", restart);
     document.addEventListener("visibilitychange", restart);
+    window.addEventListener("themechange", updateTheme);
     restart();
 
     return () => {
@@ -372,6 +403,7 @@ export default function AsciiGrass() {
       resizeObserver.disconnect();
       reducedMotion.removeEventListener("change", restart);
       document.removeEventListener("visibilitychange", restart);
+      window.removeEventListener("themechange", updateTheme);
     };
   }, []);
 

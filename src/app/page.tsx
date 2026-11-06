@@ -3,6 +3,7 @@ import { FiMail } from "react-icons/fi";
 import { FaGithub, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 import AsciiGrass from "./components/AsciiGrass";
 import AsciiLamps from "./components/AsciiLamps";
+import ThemeToggle from "./components/ThemeToggle";
 
 const socialLinks = [
   { label: "Email", href: "mailto:seen.rayhan@gmail.com", icon: FiMail },
@@ -20,6 +21,16 @@ export default function Home() {
     <main className="site-canvas">
       <div className="ascii-background" aria-hidden="true">
         <Image
+          className="ascii-background__image ascii-background__image--light"
+          src="/ascii-background-light.png"
+          alt=""
+          fill
+          priority
+          sizes="(orientation: portrait) 155vh, 100vw"
+          unoptimized
+        />
+        <Image
+          className="ascii-background__image ascii-background__image--dark"
           src="/ascii-background.png"
           alt=""
           fill
@@ -29,6 +40,7 @@ export default function Home() {
         />
       </div>
 
+      <ThemeToggle />
       <AsciiLamps />
 
       <div className="site-content">
