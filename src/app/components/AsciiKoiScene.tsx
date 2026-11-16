@@ -3,7 +3,6 @@
 import { Fragment } from "react";
 import { useLayoutEffect, useRef } from "react";
 import { KOI_ONE, type KoiRow } from "./asciiKoiData";
-import AsciiRainRipples from "./AsciiRainRipples";
 
 const koi: Array<{ art: KoiRow[]; className: string; fishIndex: number }> = [
   { art: KOI_ONE, className: "ascii-koi--2", fishIndex: 1 },
@@ -64,7 +63,7 @@ export default function AsciiKoiScene() {
 
         fish.style.setProperty(
           "--koi-mouth-offset-y",
-          `${targetCenter - mouthCenter}px`,
+          `${targetCenter - mouthCenter - 50}px`,
         );
 
         const upperTailProng = tailSegments.reduce((furthest, candidate) =>
@@ -91,7 +90,7 @@ export default function AsciiKoiScene() {
         );
         lowerFish.style.setProperty(
           "--koi-lower-offset-x",
-          `${lowerHorizontalTarget - lowerMouthCenter + 30}px`,
+          `${lowerHorizontalTarget - lowerMouthCenter + 70}px`,
         );
       });
     };
@@ -112,13 +111,18 @@ export default function AsciiKoiScene() {
       data-nosnippet
       ref={sceneRef}
     >
-      <AsciiRainRipples />
-      <img
-        alt=""
-        className="ascii-koi-reference"
-        draggable="false"
-        src="/top-left-koi.png"
-      />
+      <picture>
+        <source
+          media="(max-width: 480px)"
+          srcSet="/top-left-koi-transparent.png"
+        />
+        <img
+          alt=""
+          className="ascii-koi-reference"
+          draggable="false"
+          src="/top-left-koi.png"
+        />
+      </picture>
       {koi.map(({ art, className, fishIndex }) => {
         return (
           <pre className={`ascii-koi ${className}`} key={className}>
