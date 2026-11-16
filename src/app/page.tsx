@@ -1,8 +1,6 @@
 import { FiMail } from "react-icons/fi";
 import { FaGithub, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
-import AsciiBackground from "./components/AsciiBackground";
-import AsciiGrass from "./components/AsciiGrass";
-import AsciiLamps from "./components/AsciiLamps";
+import RandomScene from "./components/RandomScene";
 
 const socialLinks = [
   { label: "Email", href: "mailto:seen.rayhan@gmail.com", icon: FiMail },
@@ -18,9 +16,7 @@ const socialLinks = [
 export default function Home() {
   return (
     <main className="site-canvas">
-      <AsciiBackground />
-
-      <AsciiLamps />
+      <RandomScene />
 
       <div className="site-content">
         <header className="intro">
@@ -70,8 +66,6 @@ export default function Home() {
           ))}
         </nav>
       </div>
-
-      <AsciiGrass />
     </main>
   );
 }
